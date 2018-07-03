@@ -34,8 +34,12 @@ const app           = express();
 
     const routeUser     = require('./routing/routeUser');
     const routeArticle  = require('./routing/routeArticle');
+    const routeSerie  = require('./routing/routeSerie');
+    const routeMovie  = require('./routing/routeMovie');
     app.use('', routeUser);
     app.use('', routeArticle);
+    app.use('', routeSerie);
+    app.use('', routeMovie);
 
 
 // SERVER //

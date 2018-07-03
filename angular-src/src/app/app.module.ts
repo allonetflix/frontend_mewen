@@ -11,6 +11,13 @@ import { AppRouterModule } from './app-router.component';
 import { routedComponents } from './app-router.component';
 
 import { HomeService } from './services/home.service';
+import { ListearticlesService } from './services/LISTE/listearticles.service';
+import { ListemoviesService } from './services/LISTE/listemovies.service';
+import { ListeseriesService } from './services/LISTE/listeseries.service';
+import { ArticleService } from './services/SOLO/article.service';
+import { MovieService } from './services/SOLO/movie.service';
+import { SerieService } from './services/SOLO/serie.service';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +33,13 @@ import { HomeService } from './services/home.service';
     AppRouterModule
   ],
   providers: [
-    HomeService
+    HomeService,
+    ListearticlesService,
+    ListemoviesService,
+    ListeseriesService,
+    ArticleService,
+    MovieService,
+    SerieService
   ],
   bootstrap: [AppComponent]
 })

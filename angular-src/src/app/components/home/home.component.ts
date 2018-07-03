@@ -13,26 +13,65 @@ export class HomeComponent implements OnInit {
 
 	listTest:number[];
 	table:any;
-	listArticles:object[];
+	listArticlesByDate:object[];
+	listArticlesByNote:object[];
+	listArticlesBySoon:object[];
+	listSeriesByDate:object[];
+	listSeriesByNote:object[];
+	listMoviesByDate:object[];
+	listMoviesByNote:object[];
+	listMoviesBySoon:object[];
 
 	constructor(
 		private homeService: HomeService,
   		private router: Router
-  	) { }
-
-	ngOnInit() {
+  	) {
 
 		// listArticles
-		this.homeService.getDonneesByDate().subscribe( data => {
+		this.homeService.getArticlesByDate().subscribe( data => {
 
-			this.listArticles = data.listArticles;
-  			console.log(data.listArticles);
-  			console.log((data.listArticles).length);
-	  	}, 
-	  	err => {
+			this.listArticlesByDate = data.listArticlesByDate;
+	  	}, err => { return false; });
 
-	  		return false;
-	  	});
+		this.homeService.getArticlesByNote().subscribe( data => {
+
+			this.listArticlesByNote = data.listArticlesByNote;
+	  	}, err => {	return false; });
+
+	  	this.homeService.getArticlesBySoon().subscribe( data => {
+
+			this.listArticlesBySoon = data.listArticlesBySoon;
+	  	}, err => {	return false; });
+
+	  	// listSeries
+		this.homeService.getSeriesByDate().subscribe( data => {
+
+			this.listSeriesByDate = data.listSeriesByDate;
+	  	}, err => { return false; });
+
+		this.homeService.getSeriesByNote().subscribe( data => {
+
+			this.listSeriesByNote = data.listSeriesByNote;
+	  	}, err => {	return false; });
+
+	  	// listMovies
+		this.homeService.getMoviesByDate().subscribe( data => {
+
+			this.listMoviesByDate = data.listMoviesByDate;
+	  	}, err => { return false; });
+
+		this.homeService.getMoviesByNote().subscribe( data => {
+
+			this.listMoviesByNote = data.listMoviesByNote;
+	  	}, err => {	return false; });
+
+	  	this.homeService.getMoviesBySoon().subscribe( data => {
+
+			this.listMoviesBySoon = data.listMoviesBySoon;
+	  	}, err => {	return false; });
+  	}
+
+	ngOnInit() {
 
 		carousel();	
 

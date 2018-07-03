@@ -6,6 +6,8 @@
 		<img class="mySlides" src="/assets/images/img1.jpg">
 		<img class="mySlides" src="/assets/images/img2.jpg">
 		<img class="mySlides" src="/assets/images/img3.jpg">
+		<img class="mySlides" src="/assets/images/img4.jpg">
+		<img class="mySlides" src="/assets/images/img5.jpg">
 	</div>	
 
 	<div id="sliderPanels"><div>
@@ -53,11 +55,11 @@
 
 				<ul id="listPanelLastArticle" class="listPanelHome">
 
-					<li class="panelHome" *ngFor="let article of listArticles; let i = index">
+					<li class="panelHome" *ngFor="let article of listArticlesByDate; let i = index">
 						
-						<div class="imgPanelHome"></div>
+						<div class="imgPanelHome"><img src="{{ article.img }}" height="180px" width="150px" /></div>
 						<div class="titlePanelHome">{{ article.title }}</div>
-						<div class="descriptionPanelHome"></div>
+						<div class="descriptionPanelHome">{{ article.auteur }}</div>
 					</li>
 				</ul>
 			</div>
@@ -78,11 +80,11 @@
 
 				<ul id="listPanelBestArticle" class="listPanelHome">
 
-					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+					<li class="panelHome" *ngFor="let article of listArticlesByNote; let i = index">
 						
-						<div class="imgPanelHome"></div>
-						<div class="titlePanelHome"></div>
-						<div class="descriptionPanelHome"></div>
+						<div class="imgPanelHome"><img src="{{ article.img }}" height="180px" width="150px" /></div>
+						<div class="titlePanelHome">{{ article.title }}</div>
+						<div class="descriptionPanelHome">{{ article.auteur }}</div>
 					</li>
 				</ul>
 			</div>
@@ -96,9 +98,9 @@
 
 			<ul class="listAsidePanelHome">
 
-				<li *ngFor="let panel of listTest; let i = index">
+				<li *ngFor="let article of listArticlesBySoon; let i = index">
 					
-					<div class="asidePanelHome"><a href="#">Texte</a></div>
+					<div class="asidePanelHome"><a href="#">{{ article.title }}</a></div>
 				</li>
 			</ul>
 		</aside>
@@ -135,11 +137,11 @@
 
 				<ul id="listPanelLastSeries" class="listPanelHome">
 
-					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+					<li class="panelHome" *ngFor="let serie of listSeriesByDate; let i = index">
 						
-						<div class="imgPanelHome"></div>
-						<div class="titlePanelHome"></div>
-						<div class="descriptionPanelHome"></div>
+						<div class="imgPanelHome"><img src="{{ serie.img }}" height="180px" width="150px" /></div>
+						<div class="titlePanelHome">{{ serie.title }}</div>
+						<div class="descriptionPanelHome">{{ serie.distributor }}</div>
 					</li>
 				</ul>
 			</div>
@@ -160,11 +162,11 @@
 
 				<ul id="listPanelBestSeries" class="listPanelHome">
 
-					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+					<li class="panelHome" *ngFor="let serie of listSeriesByNote; let i = index">
 						
-						<div class="imgPanelHome"></div>
-						<div class="titlePanelHome"></div>
-						<div class="descriptionPanelHome"></div>
+						<div class="imgPanelHome"><img src="{{ serie.img }}" height="180px" width="150px" /></div>
+						<div class="titlePanelHome">{{ serie.title }}</div>
+						<div class="descriptionPanelHome">{{ serie.distributor }}</div>
 					</li>
 				</ul>
 			</div>
@@ -202,11 +204,11 @@
 
 				<ul id="listPanelLastMovies" class="listPanelHome">
 
-					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+					<li class="panelHome" *ngFor="let movie of listMoviesByDate; let i = index">
 						
-						<div class="imgPanelHome"></div>
-						<div class="titlePanelHome"></div>
-						<div class="descriptionPanelHome"></div>
+						<div class="imgPanelHome"><img src="{{ movie.img }}" height="180px" width="150px" /></div>
+						<div class="titlePanelHome">{{ movie.title }}</div>
+						<div class="descriptionPanelHome">{{ movie.realisator }}</div>
 					</li>
 				</ul>
 			</div>
@@ -227,11 +229,11 @@
 
 				<ul id="listPanelBestMovies" class="listPanelHome">
 
-					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+					<li class="panelHome" *ngFor="let movie of listMoviesByNote; let i = index">
 						
-						<div class="imgPanelHome"></div>
-						<div class="titlePanelHome"></div>
-						<div class="descriptionPanelHome"></div>
+						<div class="imgPanelHome"><img src="{{ movie.img }}" height="180px" width="150px" /></div>
+						<div class="titlePanelHome">{{ movie.title }}</div>
+						<div class="descriptionPanelHome">{{ movie.realisator }}</div>
 					</li>
 				</ul>
 			</div>
@@ -245,9 +247,9 @@
 
 			<ul class="listAsidePanelHome">
 
-				<li *ngFor="let panel of listTest; let i = index">
+				<li *ngFor="let movie of listMoviesBySoon; let i = index">
 					
-					<div class="asidePanelHome"><a href="#">Texte</a></div>
+					<div class="asidePanelHome"><a href="#">{{ movie.title }}</a></div>
 				</li>
 			</ul>
 		</aside>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ListeseriesService } from '../../../services/LISTE/listeseries.service';
+
 @Component({
   selector: 'app-listeseries',
   templateUrl: './listeseries.component.html',
@@ -7,12 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeseriesComponent implements OnInit {
 
-	listelements:number[];
+	listSeries:object[];
 
-	constructor() { }
+	constructor(
+		private listeseriesService: ListeseriesService
+	) {
+		// listSeries
+		this.listeseriesService.getSeries().subscribe( data => {
+
+			this.listSeries = data.listSeries;
+	  	}, err => { return false; });
+	}
 
 	ngOnInit() {
-
-		this.listelements = [1,2,3,4,5,6];
 	}
 }

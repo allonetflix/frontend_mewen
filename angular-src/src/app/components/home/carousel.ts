@@ -25,7 +25,7 @@ export function carousel () {
 		slidesList[counterSlide - 1].style.display = "block";
 
 		// initialise timeout
-		carouselTimeout = setTimeout(carouselToRight, 3000);
+		carouselTimeout = setTimeout(carouselToRight, 4000);
 
 		// firstPoint
 		document.getElementById("firstpoint").onclick = (e) => {
@@ -84,7 +84,7 @@ export function carousel () {
 		// display current block
 		slidesList[counterSlide - 1].style.display = "block";
 
-		carouselTimeout = setTimeout(carouselToRight, 3000);
+		carouselTimeout = setTimeout(carouselToRight, 4000);
 	}	
 
 	carouselToRight();
