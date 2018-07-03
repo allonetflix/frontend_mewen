@@ -1,0 +1,138 @@
+.subtitlesolo {
+
+	padding-top: 15px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	font-size: 18px;
+	background-color: orange;
+}
+
+.comments {
+
+	width: 100%;
+	margin-top: 25px;
+	background-color: lightblue;
+}
+
+.headercomment {
+
+	height: 40px; width: 100%;
+	margin-top: 25px;
+	display: flex;
+	background-color: orange;
+}
+
+	.titlecomment {
+
+		height: 40px; width: 75%;
+		display: flex;
+		align-items: center;
+		padding-left: 15px;
+		background-color: lightgreen;		
+	}
+
+	.authorcomment {
+
+		height: 40px; width: 25%;
+		display: flex;
+		align-items: center;
+		background-color: brown;
+	}
+
+.bodycomment {
+
+	padding: 15px;
+}
+
+.formnewcomment {
+
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+	margin-left: 15px; margin-right: 15px;
+	background-color: pink;
+}
+
+	.formnewcomment td {
+
+		padding-bottom: 15px;
+	}
+
+	.formnewcomment tr:nth-child(1) {
+
+		display: flex;
+		justify-content: center;
+	}
+
+	.formnewcomment tr:nth-child(1) td {
+
+		padding-top: 10px;
+	}
+
+	.formnewcomment tr:nth-child(1) td:nth-child(1),
+	.formnewcomment tr:nth-child(1) td:nth-child(3) {
+
+		width: 75px;
+	}
+
+	.formnewcomment tr:nth-child(1) td:nth-child(2),
+	.formnewcomment tr:nth-child(1) td:nth-child(4) {
+
+		padding-right: 35px;
+	}
+
+	.formnewcomment tr:nth-child(3) td {
+
+		padding-bottom: 0px;
+	}
+
+	.formnewcomment textarea {
+
+		height: 100px; width: calc(100% - 32px);
+		overflow-y: auto;
+		margin-left: 15px;
+		margin-right: 15px;
+		resize: none;
+	}
+
+	.formnewcomment tr:last-child {
+
+		text-align: center;
+	}
+
+	.submitbtn {
+
+		padding: 10px;
+	}
+
+
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 992px) {
+
+	.formnewcomment tr:nth-child(1) {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.formnewcomment tr:nth-child(1) td:nth-child(1),
+	.formnewcomment tr:nth-child(1) td:nth-child(3) {
+
+		padding-bottom: 0;
+	}
+
+	.formnewcomment tr:nth-child(1) td:nth-child(2),
+	.formnewcomment tr:nth-child(1) td:nth-child(4) {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.submitbtn {
+
+		margin-top: 15px;
+	}
+}

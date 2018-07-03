@@ -1,0 +1,28 @@
+#container {  }
+
+.subcontainer {
+
+	margin-left: auto; margin-right: auto;
+	width: 70%;
+	max-width: 1020px;
+	/*display: flex;*/
+	background-color: pink;
+	overflow: hidden;
+}
+
+/* Large devices (large desktops, 1200px and down) */
+@media (max-width: 1200px) { }
+
+/* Medium devices (desktops, 992px and down) */
+@media (max-width: 992px) { }
+
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+
+	.subcontainer {
+		width: 100%;
+		margin-left: 0; margin-right: 0;
+		position: relative;
+		top: 50px;
+	}
+}	

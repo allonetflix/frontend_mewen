@@ -1,0 +1,32 @@
+<h1>Ajouter un Article</h1>
+
+<form class="formnewcomment">
+		
+	<table>
+
+		<tr>
+			<td><label>Titre</label></td>
+			<td><input type="text" name="titlearticle" [(ngModel)]="titlearticle"></td>
+		</tr>
+
+		<tr>
+			<td><label>Description :</label></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><textarea type="text" name="descriptionarticle" [(ngModel)]="descriptionarticle"></textarea> </td>
+		</tr>
+
+		<tr>
+			<td><label>Contenu :</label></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><textarea type="text" name="contentarticle" [(ngModel)]="contentarticle"></textarea> </td>
+		</tr>
+		
+		<tr>
+			<td colspan="2"><input class="submitbtn" type="submit" value="Ajouter l'article"></td>
+		</tr>
+	</table>
+</form>

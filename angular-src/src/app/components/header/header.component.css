@@ -1,0 +1,149 @@
+header {
+
+	height: 100px; width: 100%;
+	background-color: lightblue;
+}
+
+	#header {
+
+		height: 50px; width: 100%;
+		display: flex;
+		background-color: green;
+		}
+
+		#logo {
+
+			height: 100%; width: 25%;
+			display: flex;
+			align-items: center;
+			background-color: orange;
+		}
+
+			#icon {
+
+				height: 40px; width: 40px;
+				margin-left: 8%;
+				margin-right: 4%;
+				background-color: red;
+				background-image: url(../../../assets/icon_40.jpg);
+				border-radius: 5px;
+			}
+
+		#searchbar {
+
+			height: 100%; width: 75%;
+			display: flex;
+			align-items: center;
+			background-color: purple;
+		}
+
+			#searchbar span {
+
+				width: 60%;
+				display: flex;
+				margin-left: 20%;
+			}
+
+				#searchbar span input {
+
+					height: 23px; width: 75%;
+					border-radius: 2px;
+				}
+
+				#searchbar span label {
+
+					width: calc(20% + 5%);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: blue;
+				}
+
+
+	nav {
+
+		height: 50px; width: 100%;
+		display: flex;
+		background-color: green;
+		}
+
+		#navbar  {
+
+			height: 50px; width: 100%;
+			display: flex;
+			background-color: lightblue;
+		}
+
+			#navbar li {
+
+				width: 10%;
+				padding-left: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+		#myspace {
+
+			width: 20%; max-width: 250px; min-width: 180px;
+			background-color: brown;
+		}
+
+			#myspace > a {
+
+				height: 100%; width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			#myspaceNav  {
+
+				display: none;
+				position: relative;
+				background-color: green;
+			}
+
+			#myspace > a:hover + #myspaceNav {
+
+				display: block;
+			}
+
+			#myspaceNav:hover {
+
+				display: block;
+			}
+
+				#myspaceNav div {
+
+					padding-top: 15px; padding-bottom: 15px;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+				}
+
+					#myspaceNav div a:nth-child(1) {
+
+						height: 35px; width: 150px;
+						font-size: 13px;
+						font-weight: bold;
+						border-radius: 3px;
+						margin-top: 10px; margin-bottom: 20px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						background-color: lightblue;
+					}
+
+					#myspaceNav div a:nth-child(2) {
+
+						font-size: 14px;
+						text-decoration: underline;
+					}
+
+				#myspaceNav ul li {
+
+					padding-top: 15px; padding-bottom: 15px;
+					padding-left: 10%; padding-right: 10%;
+				}

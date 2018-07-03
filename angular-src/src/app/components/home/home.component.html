@@ -1,0 +1,256 @@
+<div id="home">
+
+	<!-- carousel -->
+	<div id="slider">
+
+		<img class="mySlides" src="/assets/images/img1.jpg">
+		<img class="mySlides" src="/assets/images/img2.jpg">
+		<img class="mySlides" src="/assets/images/img3.jpg">
+	</div>	
+
+	<div id="sliderPanels"><div>
+		
+		<div id="leftBtnPanel" class="btnPanel"><</div>
+
+		<div id="groupdPointPanel">
+
+			<div id="firstpoint" class="pointPanel"></div>
+			<div id="secondpoint" class="pointPanel"></div>
+			<div id="thirdpoint" class="pointPanel"></div>
+		</div>
+
+		<div id="rightBtnPanel" class="btnPanel">></div>
+	</div></div>
+
+	<!-- Articles -->
+
+	<h1 class="titleHome">Articles</h1>
+
+	<ul class="navTitleHome">
+		
+		<li><a href="#">#Meilleurs article</a></li>
+		<li><a href="#">#Derniers article</a></li>
+
+	</ul>
+
+	<div id="articleHome" class="elementHome">
+		
+		<div>
+
+			<div class="bestHome">
+				
+				<div class="tabletSliderDiv"></div>
+
+				<div class="subTitleHome">
+					<h2>SORTIS RÉCEMMENTS</h2>
+
+					<div class="groupPointsSubTitle">
+
+						<div id="pointLeftLastArticle" (click)="listPanelToLeft($event)"><</div>
+						<div id="pointRightLastArticle" (click)="listPanelToRight($event)">></div>
+					</div>
+				</div>
+
+				<ul id="listPanelLastArticle" class="listPanelHome">
+
+					<li class="panelHome" *ngFor="let article of listArticles; let i = index">
+						
+						<div class="imgPanelHome"></div>
+						<div class="titlePanelHome">{{ article.title }}</div>
+						<div class="descriptionPanelHome"></div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="lastHome">
+				
+				<div class="tabletSliderDiv"></div>
+
+				<div class="subTitleHome">
+					<h2>ALL STARS</h2>
+
+					<div class="groupPointsSubTitle">
+
+						<div id="pointLeftBestArticle" (click)="listPanelToLeft($event)"><</div>
+						<div id="pointRightBestArticle" (click)="listPanelToRight($event)">></div>
+					</div>
+				</div>
+
+				<ul id="listPanelBestArticle" class="listPanelHome">
+
+					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+						
+						<div class="imgPanelHome"></div>
+						<div class="titlePanelHome"></div>
+						<div class="descriptionPanelHome"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<aside class="asideHome">
+			
+			<div class="subTitleHome subTitleAsideHome">
+				<h2>DIVERS</h2>
+			</div>
+
+			<ul class="listAsidePanelHome">
+
+				<li *ngFor="let panel of listTest; let i = index">
+					
+					<div class="asidePanelHome"><a href="#">Texte</a></div>
+				</li>
+			</ul>
+		</aside>
+	</div>
+
+	<!-- Séries -->
+
+	<h1 class="titleHome">Séries</h1>
+
+	<ul class="navTitleHome">
+		
+		<li><a href="#">#Meilleures séries</a></li>
+		<li><a href="#">#Dernieres séries</a></li>
+
+	</ul>
+
+	<div id="seriesHome" class="elementHome">
+		
+		<div>
+
+			<div class="bestHome">
+				
+				<div class="tabletSliderDiv"></div>
+
+				<div class="subTitleHome">
+					<h2>SORTIS RÉCEMMENTS</h2>
+
+					<div class="groupPointsSubTitle">
+
+						<div id="pointLeftLastSeries" (click)="listPanelToLeft($event)"><</div>
+						<div id="pointRightLastSeries" (click)="listPanelToRight($event)">></div>
+					</div>
+				</div>
+
+				<ul id="listPanelLastSeries" class="listPanelHome">
+
+					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+						
+						<div class="imgPanelHome"></div>
+						<div class="titlePanelHome"></div>
+						<div class="descriptionPanelHome"></div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="lastHome">
+				
+				<div class="tabletSliderDiv"></div>
+
+				<div class="subTitleHome">
+					<h2>ALL STARS</h2>
+
+					<div class="groupPointsSubTitle">
+
+						<div id="pointLeftBestSeries" (click)="listPanelToLeft($event)"><</div>
+						<div id="pointRightBestSeries" (click)="listPanelToRight($event)">></div>
+					</div>
+				</div>
+
+				<ul id="listPanelBestSeries" class="listPanelHome">
+
+					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+						
+						<div class="imgPanelHome"></div>
+						<div class="titlePanelHome"></div>
+						<div class="descriptionPanelHome"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Movies -->
+
+	<h1 class="titleHome">Movies</h1>
+
+	<ul class="navTitleHome">
+		
+		<li><a href="#">#Meilleurs films</a></li>
+		<li><a href="#">#Derniers films</a></li>
+
+	</ul>
+
+	<div id="moviesHome" class="elementHome">
+		
+		<div>
+
+			<div class="bestHome">
+				
+				<div class="tabletSliderDiv"></div>
+
+				<div class="subTitleHome">
+					<h2>SORTIS RÉCEMMENTS</h2>
+
+					<div class="groupPointsSubTitle">
+
+						<div id="pointLeftLastMovies" (click)="listPanelToLeft($event)"><</div>
+						<div id="pointRightLastMovies" (click)="listPanelToRight($event)">></div>
+					</div>
+				</div>
+
+				<ul id="listPanelLastMovies" class="listPanelHome">
+
+					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+						
+						<div class="imgPanelHome"></div>
+						<div class="titlePanelHome"></div>
+						<div class="descriptionPanelHome"></div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="lastHome">
+				
+				<div class="tabletSliderDiv"></div>
+
+				<div class="subTitleHome">
+					<h2>ALL STARS</h2>
+
+					<div class="groupPointsSubTitle">
+
+						<div id="pointLeftBestMovies" (click)="listPanelToLeft($event)"><</div>
+						<div id="pointRightBestMovies" (click)="listPanelToRight($event)">></div>
+					</div>
+				</div>
+
+				<ul id="listPanelBestMovies" class="listPanelHome">
+
+					<li class="panelHome" *ngFor="let panel of listTest; let i = index">
+						
+						<div class="imgPanelHome"></div>
+						<div class="titlePanelHome"></div>
+						<div class="descriptionPanelHome"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<aside class="asideHome">
+			
+			<div class="subTitleHome subTitleAsideHome">
+				<h2>DIVERS</h2>
+			</div>
+
+			<ul class="listAsidePanelHome">
+
+				<li *ngFor="let panel of listTest; let i = index">
+					
+					<div class="asidePanelHome"><a href="#">Texte</a></div>
+				</li>
+			</ul>
+		</aside>
+	</div>
+
+</div>

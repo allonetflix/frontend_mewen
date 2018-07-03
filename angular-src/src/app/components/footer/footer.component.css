@@ -1,0 +1,238 @@
+footer {
+
+	width: 100%;
+	background-color: darkgrey;
+}
+
+	footer > div {
+
+		max-width: 1020px;
+		display: flex; 
+		margin-left: auto; margin-right: auto;
+		width: 70%;
+		background-color: grey;
+	}
+
+		#iconsfooter {
+
+			width: 50%;
+			display: flex;
+		}
+
+			#followus {
+
+				height: 150px; width: 60%;
+				background-color: blue;
+			}
+
+			#fb img {
+
+				width: 25px; height: 25px;
+			}
+
+				#followus > div:nth-child(1) {
+
+					height: 25%; width: 100%;
+					background-color: brown;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+
+				#followus > div:nth-child(2) {
+
+					height: 75%; width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: orange;
+				}
+
+					.iconfollowus:nth-child(2) {
+
+						margin-left: 15px;
+						margin-right: 15px;
+					}
+
+					.iconfollowus {
+
+						height: 50px; width: 50px;
+						border-radius: 50px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						background-color: blue;
+					}
+
+					.iconfollowus img {
+
+						height: 25px; width: 25px;
+					}
+
+
+			#onmobile {
+
+				height: 150px; width: 40%;
+				background-color: green;
+			}
+
+				#onmobile > div:nth-child(1) {
+
+					height: 25%; width: 100%;
+					background-color: brown;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+
+				#onmobile > div:nth-child(2) {
+
+					height: 75%; width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: purple;
+				}
+
+				.iconsonmobile {
+
+					height: 50px; width: 50px;
+					border-radius: 50px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: blue;
+				}
+
+				.iconsonmobile img {
+
+					height: 25px; width: 25px;
+				}
+
+		#credentials {
+
+			height: 150px; width: 50%;
+			background-color: pink;
+		}
+
+			#credentials > ul {
+
+				height: 40%; width: 100%;
+				background-color: brown;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+				#credentials > ul li {
+
+					padding: 15px;
+				}
+
+			#credentials > div {
+
+				height: 60%; width: 100%;
+				background-color: orange;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}				
+
+				#credentials > div > div:nth-child(1) {
+
+					height: 50px; min-width: 100px;
+					padding-top: 2.5px;
+					padding-bottom: 2.5px;
+					padding-right: 15px;
+					padding-left: 15px;
+					display: flex;
+					align-items: center;
+					background-color: teal;
+					margin: 5%;
+				}
+
+				#credentials > div > div:nth-child(2) {
+
+					height: 50px; min-width: 100px;
+					padding-top: 2.5px;
+					padding-bottom: 2.5px;
+					padding-right: 15px;
+					padding-left: 15px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: teal;
+					margin: 5%;
+					font-size: 15px;
+				}
+
+				#icon {
+
+					height: 40px; width: 40px;
+					margin-right: 10px;
+					background-color: red;
+					background-repeat: no-repeat;
+    				background-size: 100% 100%;
+					background-image: url(../../../assets/icon_40.jpg);
+					border-radius: 5px;
+				}
+
+				#iconesgi {
+
+					height: 40px; width: 80px;
+					margin-right: 10px;
+					background-repeat: no-repeat;
+    				background-size: 100% 100%;
+					background-image: url(../../../assets/esgi.png);
+					border-radius: 5px;
+				}
+
+
+/* Large devices (large desktops, 1200px and down) */
+@media (max-width: 1200px) { 
+
+	footer > div {
+
+		flex-direction: column;
+	}
+
+	#iconsfooter {
+
+			width: 100%;
+		}
+
+		#credentials {
+
+			width: 100%;
+		}
+}
+
+
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 768px) { 
+
+	footer > div {
+
+		position: relative;
+		top: 50px;
+		width: 100%;
+		margin: 0;
+	}
+
+	#credentials > div > div {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#credentials > div > div div {
+
+		margin: 0;
+	}
+
+	#credentials > div > div span {
+
+		display: none;
+	}
+}

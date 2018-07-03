@@ -1,0 +1,45 @@
+<ul class="comments">
+
+	<li *ngFor="let comment of listcomments; let i = index">
+
+		<div class="headercomment">
+			
+			<div class="titlecomment">Title Comment</div>
+			<div class="authorcomment">Author Comment</div>
+		</div>
+
+		<div class="bodycomment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	</li>
+</ul>
+
+<div class="newcomment">
+
+	<h3 class="subtitlesolo">New Comment</h3>
+
+	<form class="formnewcomment">
+		
+		<table>
+
+			<tr>
+				<td><label>Titre</label></td>
+				<td><input type="text" name="titlecomment" [(ngModel)]="titlecomment"></td>
+				<td><label>Auteur</label></td>
+				<td><input type="text" name="authorcomment" [(ngModel)]="authorcomment"></td>
+			</tr>
+			<tr>
+				<td><label>Commentaire :</label></td>
+			</tr>
+			<tr>
+				<td colspan="2"><textarea type="text" name="contentcomment" [(ngModel)]="contentcomment"></textarea> </td>
+			</tr>
+			<tr>
+				<td colspan="2"><input class="submitbtn" type="submit" value="Ajouter le commentaire"></td>
+			</tr>
+		</table>
+	</form>
+</div>

@@ -1,0 +1,45 @@
+<nav *ngIf=isClickedNav>
+
+    <ul id="t_nav">
+      
+        <li><a href="/">Home</a></li>
+        <li><a href="/listearticles">Articles</a></li>
+        <li><a href="/listeseries">Séries</a></li>
+        <li><a href="/listemovies">Films</a></li>
+    </ul>
+</nav>
+
+<header id="t_header">
+
+	<a id="btn_nav" (click)="onClickNav()">Mes Rubriques</a>
+
+    <div id="t_logo"><span id="icon"></span></div>
+
+    <div id="t_searchbar">
+
+        <input type="text" name="searchbar">
+        <a (click)="onClickSearchBar()">Recherche</a>
+    </div>
+
+    <a id="btn_myspace" (click)="onClickMyspace()">Mon Espace</a>
+
+</header>
+
+<div id="t_myspace" *ngIf=isClickedMyspace>
+
+    <div>
+
+        <div>
+            
+            <a href="/login">IDENTIFIEZ-VOUS</a>
+            <a href="/register">Créez votre compte</a>
+        </div>
+
+        <ul>
+
+            <li><a href="/profil">Profil</a></li>
+            <li><a href="/addarticle">Ajouter un article</a></li>
+            <li><a href="#">Déconnexion</a></li>
+        </ul>
+    </div>
+</div>

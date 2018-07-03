@@ -1,0 +1,83 @@
+#saisonimg {
+
+	height: 250px; width: 800px;
+	margin-left: auto; margin-right: auto;
+	background-color: blue;
+}
+
+#saisonbody {
+
+	width: 100%;
+	padding-bottom: 25px;
+	background-color: green;
+}
+
+	.titlesolo {
+
+		text-align: center;
+		padding-top: 25px;
+		padding-bottom: 15px;
+		background-color: brown;
+	}
+
+	.subtitlesolo {
+
+		padding-top: 15px;
+		padding-bottom: 5px;
+		padding-left: 15px;
+		font-size: 18px;
+		background-color: orange;
+	}
+
+	.paragraphsolo {
+
+		padding: 15px;
+		background-color: lightblue;
+	}
+
+.comments {
+
+		width: 100%;
+		margin-top: 25px;
+		background-color: lightblue;
+	}
+
+	.headercomment {
+
+		height: 50px; width: 100%;
+		margin-top: 25px;
+		display: flex;
+		background-color: orange;
+	}
+
+		.titlecomment {
+
+			height: 50px; width: 75%;
+			display: flex;
+			align-items: center;
+			padding-left: 15px;
+			background-color: lightgreen;		
+		}
+
+		.authorcomment {
+
+			height: 50px; width: 25%;
+			display: flex;
+			align-items: center;
+			background-color: brown;
+		}
+
+	.bodycomment {
+
+		padding: 15px;
+	}
+
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 768px) { 
+
+	.tablesolo {
+
+		width: 100%;
+		margin-left: 0;
+	}
+}

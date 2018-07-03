@@ -1,0 +1,28 @@
+<h1>Se connecter</h1>
+
+<form (submit)="onConnexionSubmit()">
+		
+	<table>
+
+
+		<tr>
+			<td><label>Pseudo</label></td>
+		</tr>
+		<tr>
+			<td><input type="text" name="pseudo" [(ngModel)]="pseudo"></td>
+		</tr>
+
+
+		<tr>
+			<td><label>Mot de passe</label></td>
+		</tr>
+		<tr>
+			<td><input type="password" name="mdp" [(ngModel)]="mdp"></td>
+		</tr>
+
+
+		<tr>
+			<td><input class="submitbtn" type="submit" value="Connexion"></td>
+		</tr>
+	</table>
+</form>

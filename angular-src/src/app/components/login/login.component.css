@@ -1,0 +1,40 @@
+h1 {
+
+	height: 50px; width: 100%;
+	padding-left: 15px;
+	padding-top: 15px;
+	text-align: center;
+	background-color: orange;
+}
+
+form {
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 50px;
+}
+
+table tr {
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+table tr:nth-child(1) td, 
+table tr:nth-child(3) td {
+
+	padding-bottom: 10px;
+}
+
+table tr:nth-child(2) td, 
+table tr:nth-child(4) td {
+
+	padding-bottom: 25px;
+}
+
+.submitbtn {
+
+	padding: 10px;
+}

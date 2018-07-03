@@ -1,0 +1,115 @@
+#articleimg {
+
+	height: 250px; width: 800px;
+	margin-left: auto; margin-right: auto;
+	background-color: blue;
+}
+
+#articlebody {
+
+	width: 100%;
+	padding-bottom: 25px;
+	background-color: green;
+}
+
+	.titlesolo {
+
+		text-align: center;
+		padding-top: 25px;
+		padding-bottom: 15px;
+		background-color: brown;
+	}
+
+	.subtitlesolo {
+
+		padding-top: 15px;
+		padding-bottom: 5px;
+		padding-left: 15px;
+		font-size: 18px;
+		background-color: orange;
+	}
+
+	.paragraphsolo {
+
+		padding: 15px;
+		background-color: lightblue;
+	}
+
+	.tablesolo {
+
+		height: 150px; width: calc(100% - 30px);
+		margin: 15px;
+		background-color: blue;
+	}
+
+		.tablesolo tr td:nth-child(1){
+
+			height: 100%; width: 150px;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+		}
+
+		.tablesolo tr td:nth-child(2){
+
+			width: 100%; 
+			padding-left: 15px; 
+		}
+
+	.notelike{
+
+		height: 75px; width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		background-color: pink;
+	}
+
+		.note {
+
+			height: 50px; width: 250px;
+			display: flex;
+			background-color: grey;
+		}
+
+			.note div {
+
+				height: 50px; width: 50px;
+				background-color: purple;
+			}
+
+		.like {
+
+			height: 50px; width: 50px;
+			background-color: grey;
+		}
+
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+
+	.tablesolo {
+
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.formnewcomment tr:nth-child(1) {
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	.formnewcomment tr:nth-child(1) td:nth-child(1),
+	.formnewcomment tr:nth-child(1) td:nth-child(3) {
+
+		padding-bottom: 0;
+	}
+
+	.formnewcomment tr:nth-child(1) td:nth-child(2),
+	.formnewcomment tr:nth-child(1) td:nth-child(4) {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}

@@ -1,0 +1,93 @@
+<h1>Créer un compte</h1>
+
+<form (submit)="onConnexionSubmit()">
+		
+	<table>
+
+
+		<tr>
+			<td><label>Pseudo</label></td>
+		</tr>
+		<tr>
+			<td><input type="text" name="pseudo" [(ngModel)]="pseudo"></td>
+		</tr>
+
+
+		<tr>
+			<td><label>Email</label></td>
+		</tr>
+		<tr>
+			<td><input type="email" name="email" [(ngModel)]="email"></td>
+		</tr>
+
+
+		<tr>
+			<td><label>Mot de passe</label></td>
+		</tr>
+		<tr>
+			<td><input type="password" name="mdp" [(ngModel)]="mdp"></td>
+		</tr>
+
+
+		<tr>
+			<td><label>Nom</label></td>
+		</tr>
+		<tr>
+			<td><input type="text" name="lastname" [(ngModel)]="lastname"></td>
+		</tr>
+
+
+		<tr>
+			<td><label>Prénom</label></td>
+		</tr>
+		<tr>
+			<td><input type="text" name="firstname" [(ngModel)]="firstname"></td>
+		</tr>
+
+		<tr>
+			<td><label>Adresse</label></td>
+		</tr>
+		<tr>
+			<span>
+				<td><label>N° : </label><br><input type="number" name="nbstreet" [(ngModel)]="nbstreet"></td>
+				<td><label>Nom de rue : </label><br><input type="text" name="street" [(ngModel)]="street" value="hello"></td>
+			</span>
+			<span>
+				<td><label>Ville : </label><br><input type="text" name="city" [(ngModel)]="city"></td>
+				<td><label>Code Postal : </label><br><input type="number" name="postalcode" [(ngModel)]="postalcode"></td>
+			</span>
+		</tr>
+
+
+		<tr>
+			<td><label>Sexe</label></td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="gender" value="male" checked>Male</td>
+		    <td><input type="radio" name="gender" value="female">Female</td>
+		    <td><input type="radio" name="gender" value="other">Other</td>
+		</tr>
+
+
+		<tr>
+			<td><label>Date de naissance</label></td>
+		</tr>
+		<tr>
+			<td><input type="date" name="birthdate" [(ngModel)]="birthdate"></td>
+		</tr>
+
+
+		<tr>
+			<td><label>RGPD</label></td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="rgpd" value="rgpdyes" checked>Oui</td>
+		    <td><input type="radio" name="rgpd" value="rgpdyno">Non</td>
+		</tr>
+
+
+		<tr>
+			<td><input class="submitbtn" type="submit" value="Inscription"></td>
+		</tr>
+	</table>
+</form>

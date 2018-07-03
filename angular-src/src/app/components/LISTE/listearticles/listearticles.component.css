@@ -1,0 +1,54 @@
+h1 {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 25px;
+	padding-bottom: 15px;
+	background-color: blue;
+}
+
+.list {
+
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	border-bottom: 1px solid grey;
+	background-color: lightgreen;
+}
+
+.list:last-child{
+
+	margin-bottom: 25px;
+	border-bottom: none;
+}
+
+	.imglist {
+
+		height: 180px; width: 150px;
+		background-color: black;
+	}
+
+	.bodylist {
+
+		height: 180px; width: calc(100% - 150px - 20px);
+		background-color: grey;
+	}
+
+		.titlelist {
+
+			height: 50px; width: calc(100% - 15px);
+			display: flex;
+			align-items: center;
+			padding-left: 15px;
+			font-size: 18px;
+			background-color: orange;
+		}
+
+		.descriptionlist {
+
+			height: 100px; width: calc(100% - 30px);
+			padding: 15px;
+			overflow-y: auto;
+			background-color: brown;
+		}

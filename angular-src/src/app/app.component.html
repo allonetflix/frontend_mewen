@@ -1,0 +1,16 @@
+<app-t-header *ngIf="isTablet"></app-t-header>
+
+<span *ngIf="isComputer">
+
+	<app-header ></app-header>
+	<app-s-header *ngIf="isScrolled;"></app-s-header>
+
+</span>
+
+<div id="container">
+	<div class="subcontainer">
+	<router-outlet></router-outlet>
+	</div>
+</div>
+
+<app-footer></app-footer>

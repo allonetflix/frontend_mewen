@@ -1,0 +1,277 @@
+/*slider*/
+#slider {
+
+	justify-content: center;
+	background-color: black;
+	}
+
+	#slider img {
+
+		width: 100%;
+	}
+
+#sliderPanels {
+
+	height: 0;
+	}
+
+	#sliderPanels > div {
+
+		height: 50px; width: 100%;
+		position: relative; top: -50px;
+		background-color: green;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.btnPanel {
+
+		height: 100%; width: 50px;
+		font-size: 20px;
+		font-weight: bold;
+		background-color: grey;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		cursor: pointer;
+		user-select: none; 
+	}
+
+	#groupdPointPanel {
+
+		height: 100%; width: 13%;
+		min-width: 80px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		background-color: pink;
+	}
+
+		.pointPanel {
+
+			height: 20px; width: 20px;
+			border-radius: 50px;
+			cursor: pointer;
+			background-color: white;
+		}
+
+/*end slider*/
+
+
+.titleHome {
+
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 25px;
+	padding-bottom: 15px;
+	background-color: blue;
+}
+
+.navTitleHome {
+
+	display: flex;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	justify-content: space-around;
+	background-color: orange;
+}
+
+.elementHome {
+
+	height: 600px; width: 100%;
+	display: flex;
+	background-color: lightblue;
+}
+
+	.elementHome > div {
+
+		height: 600px; width: 80%;
+		display: flex;
+		flex-direction: column;
+		background-color: teal;
+	}
+
+		.bestHome, .lastHome {
+
+			height: 300px; width: 100%;
+			max-width: 680px; min-width: 400px;
+			background-color: lightblue;
+		}
+
+			.subTitleHome {
+
+				height: 50px; width: 100%;
+				display: flex;
+				align-items: center;
+				padding-left: 10px;
+				background-color: purple;
+				justify-content: space-between;
+			}
+
+				.groupPointsSubTitle {
+
+					display: flex;
+					position: relative;
+					padding-right: 20px;
+					z-index: 5;
+				}
+
+					.groupPointsSubTitle div {
+
+						width: 30px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						padding: 5px;
+						font-size: 25px;
+						background-color: blue;
+						cursor: pointer;
+						user-select: none;
+					}
+
+					.groupPointsSubTitle div:nth-child(1) {
+
+						margin-right: 15px;
+					}
+
+			.listPanelHome {
+
+				height: 250px;
+				display: inline-flex;
+				transition: all 0.5s ease-in-out;
+				background-color: lightgreen;
+			}
+
+				.panelHome {
+
+					height: 230px; width: 150px;
+					padding: 10px;
+					background-color: darkgrey;
+				}
+
+					.imgPanelHome {
+
+						height: 180px; width: 100%;
+						background-color: black;
+					}
+
+					.titlePanelHome {
+
+						height: 20px; width: calc(100% - 10px);
+						padding-left: 5px;
+						padding-right: 5px;
+						padding-top: 5px;
+						background-color: orange;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						overflow: hidden;
+					}
+
+					.descriptionPanelHome {
+
+						height: 25px; width: 100%;
+						background-color: blue;
+					}
+
+	.asideHome {
+
+		height: 600px; width: 405px;
+		background-color: green;
+		z-index: 2;
+		}
+
+		.subTitleAsideHome {
+
+			padding-left: 25px;
+		}
+
+		.listAsidePanelHome {
+
+			height: 550px; width: 100%;
+			background-color: cornflowerblue;
+		}
+
+			.asidePanelHome {
+
+				height: 50px; width: 100%;
+				display: flex;
+				align-items: center;
+				padding-left: 25px;
+				background-color: tomato;
+				border-bottom: 1px solid brown;	
+			}
+
+
+	#seriesHome > div {
+
+		width: 100%;
+	}
+
+	#seriesHome .bestHome, #seriesHome .lastHome, #seriesHome .subTitleHome {
+
+		width: 100%;
+		max-width: initial;
+	}
+
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 768px) { 
+
+/*slider*/
+	#sliderPanels > div {
+
+		height: 40px;
+		top: -40px;
+	}
+
+	.btnPanel {
+
+		width: 40px;
+	}
+
+	#groupdPointPanel {
+
+		display: none;
+	}
+/*end slider*/
+
+	.elementHome > div {
+
+		width: 100%;
+	}
+
+	.subTitleHome, .bestHome, .lastHome {
+
+		width: 100%;
+		max-width: none;
+	}
+
+	.groupPointsSubTitle {
+
+		margin-right: 5px;
+	}
+
+	.asideHome {
+
+		display: none;
+	}
+}
+
+@media (max-width: 400px) { 
+
+	.groupPointsSubTitle {
+
+		right: 50px;
+		top: 50px;
+	}
+}
+
+@media (max-width: 350px) { 
+
+	.groupPointsSubTitle {
+
+		right: 75px;
+		top: 50px;
+	}
+}
