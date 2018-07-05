@@ -17,6 +17,7 @@ import { ListeseriesService } from './services/LISTE/listeseries.service';
 import { ArticleService } from './services/SOLO/article.service';
 import { MovieService } from './services/SOLO/movie.service';
 import { SerieService } from './services/SOLO/serie.service';
+import { RegisterService } from './services/register.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { SerieService } from './services/SOLO/serie.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    FlashMessagesModule,
+    FlashMessagesModule.forRoot(),
     BrowserAnimationsModule,
     AppRouterModule
   ],
@@ -39,7 +40,8 @@ import { SerieService } from './services/SOLO/serie.service';
     ListeseriesService,
     ArticleService,
     MovieService,
-    SerieService
+    SerieService,
+    RegisterService
   ],
   bootstrap: [AppComponent]
 })

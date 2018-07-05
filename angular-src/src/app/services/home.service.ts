@@ -9,7 +9,6 @@ export class HomeService {
 
 	constructor(private http:Http) { }
 
-
     // Articles
 	  getArticlesByDate(){
 

@@ -2,6 +2,7 @@ const bcrypt        = require('bcryptjs');
 
 const db	        = require('../middlewares/connection');
 
+// User
 
 module.exports.insertUser = (newUser, callback) =>{
 

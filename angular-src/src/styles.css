@@ -96,3 +96,68 @@ to   { opacity: 1; }
 
 	background-color: black;
 }
+
+/* Flash-Message */
+
+@keyframes flashfade {
+	0% {opacity:0;}
+	20% {opacity:1}
+	80% {opacity:1}
+	100% {opacity:0}
+}
+
+.flashfade {
+	animation-name: flashfade;
+	animation-duration: 6s;
+}
+
+.flash-message{
+	display:none;
+
+	height: 50px; 
+	position: absolute;
+	top: 100px;
+	left: 25%; right: 25%;
+	padding-top: 5px; padding-bottom: 5px;
+	padding-right: 10px; padding-left: 10px;
+	background-color: rgba(0,0,0, 0.5);
+	border-radius: 5px;
+	z-index: 9;
+	pointer-events: none;
+}
+
+.flash-message:last-child{
+
+	display: flex !important;
+	align-items: center;
+}
+
+	.flash-message p{
+
+		color: #FFF;
+		font-size: 20px;
+		padding-left: 40px;
+	}
+	.alert-red{
+
+		background-color: rgba(255, 43, 43, 0.8);
+		background-image: url('assets/images/alert.png');
+		background-repeat: no-repeat;
+		background-position: 15px 50%;
+	}
+
+	.alert-blue{
+
+		background-color: rgba(89, 186, 247, 0.8);
+		background-image: url('assets/images/check.png');
+		background-repeat: no-repeat;
+		background-position: 15px 50%;
+	}
+
+	.alert-orange{
+
+		background-color: rgba(247, 171, 17, 0.8);
+		background-image: url('assets/images/info.png');
+		background-repeat: no-repeat;
+		background-position: 15px 50%;
+	}

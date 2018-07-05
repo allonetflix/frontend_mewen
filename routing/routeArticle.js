@@ -29,7 +29,6 @@ router.post('/dataArticle', (req, res) => { // Get One Article
     });
 });
 
-
 router.get('/dataListArticles', (req, res) => { // Get All Articles
 
 	selectQuery.selectArticles((err, listArticleFound) => {     
@@ -86,6 +85,25 @@ router.get('/dataListArticlesBySoon', (req, res) => { // Get All Articles Sorted
     });
 });
 
+// series
+
+router.post('/dataSerie', (req, res) => { // Get One Serie
+
+    const idObject = {
+        _id: req.body._id
+    }
+
+    selectQuery.selectSerie(idObject, (err, SerieFound) => {     
+
+        if(err) throw err;
+        if(!SerieFound){ return res.json({success: false, msg: "Serie not found !"}); }
+
+        res.json({
+            success: true,
+            serie: SerieFound
+        });
+    });
+});
 
 router.get('/dataListSeriesByDate', (req, res) => { // Get All Series Sorted by Date
 
@@ -111,6 +129,28 @@ router.get('/dataListSeriesByNote', (req, res) => { // Get All Series Sorted by 
         res.json({
             success: true,
             listSeriesByNote: listSeriesFound
+        });
+    });
+});
+
+// movies
+
+router.post('/dataMovie', (req, res) => { // Get One Movie
+
+    const idObject = {
+        _id: req.body._id
+    }
+
+    console.log("here is _id : " + idObject._id);
+
+    selectQuery.selectMovie(idObject, (err, MovieFound) => {     
+
+        if(err) throw err;
+        if(!MovieFound){ return res.json({success: false, msg: "Movie not found !"}); }
+
+        res.json({
+            success: true,
+            movie: MovieFound
         });
     });
 });

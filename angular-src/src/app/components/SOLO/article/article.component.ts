@@ -24,7 +24,7 @@ export class ArticleComponent implements OnInit {
 	    	this.id = params['id'];
 	    });
 
-		// listArticles
+		// Article
 
 		const idObject = { _id: this.id	}
 

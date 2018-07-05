@@ -1,37 +1,27 @@
-<div id="seriesolo">
+<div id="seriesolo" *ngIf="serie">
 
-	<div id="serieimg"></div>
+	<div id="serieimg"><img src="{{ serie.img }}" height="180px" width="150px"/></div>
 
 	<div id="seriebody">
 		
-		<h1 class="titlesolo">Titre Série</h1>
+		<h1 class="titlesolo">{{ serie.title }}</h1>
 
 		<h3 class="subtitlesolo">Synopsis</h3>
 
-		<p class="paragraphsolo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua.</p>
+		<p class="paragraphsolo">{{ serie.synopsis }}</p>
 
 		<table class="tablesolo">
 			
 			<tr>
 				<td>nationalité : </td>
-				<td>nationalitésérie</td>
+				<td>{{ serie.nationality }}</td>
 			</tr>
 
 			<tr>
 				<td>distributeur : </td>
-				<td>nomdistributeur</td>
+				<td>{{ serie.distributor }}</td>
 			</tr>
 		</table>
-
-		<h3 class="subtitlesolo">Description</h3>
-
-		<p class="paragraphsolo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 		<div class="notelike">
 			

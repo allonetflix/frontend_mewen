@@ -1,6 +1,6 @@
 <h1>Modifier mon profil</h1>
 
-<form (submit)="onConnexionSubmit()">
+<form (submit)="updateSubmit()">
 		
 	<table>
 
@@ -25,7 +25,7 @@
 			<td><label>Mot de passe</label></td>
 		</tr>
 		<tr>
-			<td><input type="password" name="mdp" [(ngModel)]="mdp"></td>
+			<td><input type="password" name="password" [(ngModel)]="password"></td>
 		</tr>
 
 
@@ -33,7 +33,7 @@
 			<td><label>Nom</label></td>
 		</tr>
 		<tr>
-			<td><input type="text" name="lastname" [(ngModel)]="lastname"></td>
+			<td><input type="text" name="lastName" [(ngModel)]="lastName"></td>
 		</tr>
 
 
@@ -41,7 +41,7 @@
 			<td><label>Prénom</label></td>
 		</tr>
 		<tr>
-			<td><input type="text" name="firstname" [(ngModel)]="firstname"></td>
+			<td><input type="text" name="firstName" [(ngModel)]="firstName"></td>
 		</tr>
 
 		<tr>
@@ -49,12 +49,12 @@
 		</tr>
 		<tr>
 			<span>
-				<td><label>N° : </label><br><input type="number" name="nbstreet" [(ngModel)]="nbstreet"></td>
+				<td><label>N° : </label><br><input type="number" name="nbStreet" [(ngModel)]="nbStreet"></td>
 				<td><label>Nom de rue : </label><br><input type="text" name="street" [(ngModel)]="street" value="hello"></td>
 			</span>
 			<span>
 				<td><label>Ville : </label><br><input type="text" name="city" [(ngModel)]="city"></td>
-				<td><label>Code Postal : </label><br><input type="number" name="postalcode" [(ngModel)]="postalcode"></td>
+				<td><label>Code Postal : </label><br><input type="number" name="postalCode" [(ngModel)]="postalCode"></td>
 			</span>
 		</tr>
 
@@ -63,9 +63,9 @@
 			<td><label>Sexe</label></td>
 		</tr>
 		<tr>
-			<td><input type="radio" name="gender" value="male" checked>Male</td>
-		    <td><input type="radio" name="gender" value="female">Female</td>
-		    <td><input type="radio" name="gender" value="other">Other</td>
+			<td><input type="radio" name="sex" value="male" [(ngModel)]="sex" checked>Homme</td>
+		    <td><input type="radio" name="sex" value="female" [(ngModel)]="sex">Femme</td>
+		    <td><input type="radio" name="sex" value="other" [(ngModel)]="sex">Autre</td>
 		</tr>
 
 
@@ -73,7 +73,7 @@
 			<td><label>Date de naissance</label></td>
 		</tr>
 		<tr>
-			<td><input type="date" name="birthdate" [(ngModel)]="birthdate"></td>
+			<td><input type="date" name="birthDay" [(ngModel)]="birthDay"></td>
 		</tr>
 
 
@@ -81,13 +81,13 @@
 			<td><label>RGPD</label></td>
 		</tr>
 		<tr>
-			<td><input type="radio" name="rgpd" value="rgpdyes" checked>Oui</td>
-		    <td><input type="radio" name="rgpd" value="rgpdyno">Non</td>
+			<td><input type="radio" name="rgpd" value="true" [(ngModel)]="rgpd" checked>Oui</td>
+		    <td><input type="radio" name="rgpd" value="false" [(ngModel)]="rgpd">Non</td>
 		</tr>
 
 
 		<tr>
-			<td><input class="submitbtn" type="submit" value="Modifier"></td>
+			<td><input class="submitbtn" type="submit" value="Modification"></td>
 		</tr>
 	</table>
 </form>

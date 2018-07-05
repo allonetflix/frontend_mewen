@@ -110,7 +110,7 @@ const db	        = require('../middlewares/connection');
 
     module.exports.selectMovie = (idObject, callback) => { // selectMovie
 
-        const queryText = 'SELECT * FROM schema.article WHERE idMovie = $1;';
+        const queryText = 'SELECT * FROM schema.movie WHERE idMovie = $1;';
         const queryValues = [idObject._id];
 
         db.connectionPsql(queryText, queryValues, callback);

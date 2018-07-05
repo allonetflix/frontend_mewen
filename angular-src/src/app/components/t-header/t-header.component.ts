@@ -1,5 +1,11 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 
+import { LoginService } from '../../services/login.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { Router } from '@angular/router';
+
+import * as $ from "jquery";
+
 @Component({
   selector: 'app-t-header',
   templateUrl: './t-header.component.html',
@@ -11,7 +17,11 @@ export class THeaderComponent implements OnInit {
 	isClickedMyspace:boolean;
 	isClickedSearchbar:boolean = true;
 
-	constructor() { }
+	constructor(
+		private loginService: LoginService,
+  		private flashMessages: FlashMessagesService,
+    	private router: Router
+    ) { }
 
 	ngOnInit() {
 	}
@@ -48,6 +58,12 @@ export class THeaderComponent implements OnInit {
 		(<any>document.querySelector("#t_searchbar input")).style.transform = (this.isClickedSearchbar == true)  ? 'translateX(100%)' : 'translateX(4%)';
 	}
 
+	logoutUser(){
 
+		let position = $(document).scrollTop() + 200;
+
+		this.loginService.logoutUser();
+		this.flashMessages.show("Vous êtes déconnecté", {cssClass: 'flashfade alert-blue', timeout: 3000});
+	}
 
 }
