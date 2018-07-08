@@ -27,15 +27,26 @@ h1 {
 		display: inline-block;
 	}
 
-	.formnewcomment tr:nth-child(1) td:nth-child(2) {
+	.formnewcomment tr:nth-child(1) td:nth-child(2),
+	.formnewcomment tr:nth-child(1) td:nth-child(4) {
 
 		padding-left: 15px;
+	}
+
+	.formnewcomment tr:nth-child(1) td:nth-child(3) {
+
+		padding-left: 100px;
 	}
 
 	.formnewcomment tr:nth-child(2) td:nth-child(1),
 	.formnewcomment tr:nth-child(4) td:nth-child(1) {
 
 		padding-bottom: 0;
+	}
+
+	.formnewcomment tr:nth-child(1) td:nth-child(4) input {
+
+		width: 250px;
 	}
 
 	.formnewcomment textarea {
@@ -89,5 +100,10 @@ h1 {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.formnewcomment tr:nth-child(1) td:nth-child(3) {
+
+		padding-left: 0;
 	}
 }

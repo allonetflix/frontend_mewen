@@ -69,20 +69,53 @@
 
 			height: 50px; width: 250px;
 			display: flex;
+			position: relative;
+			z-index: 1;
 			background-color: grey;
 		}
 
 			.note div {
 
 				height: 50px; width: 50px;
-				background-color: purple;
+				position: absolute;
+				z-index: 2;
+				/*background-color: purple;*/
 			}
+
+			.note div:nth-child(2) {
+
+				margin-left: 50px;
+			}
+
+			.note div:nth-child(3) {
+
+				margin-left: 100px;
+			}
+
+			.note div:nth-child(4) {
+
+				margin-left: 150px;
+			}
+
+			.note div:nth-child(5) {
+
+				margin-left: 200px;
+			}
+
+		.noteglobal {
+
+			font-size: 30px; 
+			font-weight: bold;
+			position: relative;
+			right: 5%;
+		}
 
 		.like {
 
 			height: 50px; width: 50px;
 			background-color: grey;
 		}
+
 
 /* Small devices (tablets, 768px and down) */
 @media (max-width: 768px) {
@@ -111,5 +144,22 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.notelike {
+
+		flex-direction: column;height: auto;
+	}
+
+	.notelike > div, .notelike > a { 
+
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.noteglobal {
+
+		margin-bottom: 0px;
+		right: 0;
 	}
 }

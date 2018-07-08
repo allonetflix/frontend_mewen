@@ -32,7 +32,10 @@
 				<div></div>
 				<div></div>
 			</div>
-			<div class="like"></div>
+			<a class="like" (click)="likeIt()">
+				<img *ngIf="likedRessource == false" src="../../../../assets/thumbs-up-regular.png" height="50" width="50">
+				<img *ngIf="likedRessource == true" src="../../../../assets/thumbs-up-solid.png" height="50" width="50">
+			</a>
 		</div>
 
 		<app-comments></app-comments>

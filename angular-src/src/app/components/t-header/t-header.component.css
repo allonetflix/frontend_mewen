@@ -15,6 +15,7 @@ header {
 	#t_nav {
 
 		height: 100%; width: 75%;
+		padding-top: 30px;
 		position: absolute;
 		top: 50px;
 		left: 0px;

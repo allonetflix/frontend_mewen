@@ -11,6 +11,7 @@ const ensureBodyFields = require('../middlewares/ensureBodyFields');
 const insertQuery   = require('../queries/insert');
 const selectQuery   = require('../queries/select');
 const updateQuery   = require('../queries/update');
+const deleteQuery   = require('../queries/delete');
 
 
 router.post('/register', // Register
@@ -115,8 +116,6 @@ router.post('/updateUser', (req, res) => { // Update (for FRONT)
         rgpd: req.body.rgpd
     }
 
-    console.log(updUser);
-
     selectQuery.selectUserByPseudo(updUser.pseudo, (err, userFound) => { // check if pseudo exists
 
         if(err) throw err;
@@ -131,5 +130,24 @@ router.post('/updateUser', (req, res) => { // Update (for FRONT)
         });  
     });
 });
+
+router.post('/nameUser', (req, res) => { // Get One User
+
+    const idObject = {
+        _id: req.body._id
+    }
+
+    selectQuery.selectUserById(idObject._id, (err, userFound) => {     
+
+        if(err) throw err;
+        if(!userFound){ return res.json({success: false, msg: "User not found !"}); }
+
+        res.json({
+            success: true,
+            user: userFound
+        });
+    });
+});
+
 
 module.exports = router;

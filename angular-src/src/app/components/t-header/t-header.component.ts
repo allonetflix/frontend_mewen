@@ -1,6 +1,8 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 
 import { LoginService } from '../../services/login.service';
+import { ProfilService } from '../../services/profil.service';
+
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 
@@ -18,6 +20,7 @@ export class THeaderComponent implements OnInit {
 	isClickedSearchbar:boolean = true;
 
 	constructor(
+		private profilService: ProfilService,
 		private loginService: LoginService,
   		private flashMessages: FlashMessagesService,
     	private router: Router

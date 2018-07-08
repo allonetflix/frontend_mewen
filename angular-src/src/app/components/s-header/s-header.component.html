@@ -24,15 +24,15 @@
 
             <div>
                 
-                <a href="/login">IDENTIFIEZ-VOUS</a>
-                <a href="/register">Créez votre compte</a>
+                <a *ngIf="!profilService.loggedIn()" href="/login">IDENTIFIEZ-VOUS</a>
+                <a *ngIf="!profilService.loggedIn()" href="/register">Créez votre compte</a>
             </div>
 
             <ul>
 
-                <li><a href="/profil">Profil</a></li>
-                <li><a href="/addarticle">Ajouter un article</a></li>
-                <li><a href="/login" (click)=" logoutUser();">Déconnexion</a></li>
+                <li *ngIf="profilService.loggedIn()"><a href="/profil">Profil</a></li>
+                <li *ngIf="profilService.loggedIn()"><a href="/addarticle">Ajouter un article</a></li>
+                <li *ngIf="profilService.loggedIn()"><a href="/login" (click)=" logoutUser();">Déconnexion</a></li>
             </ul>
         </div>
     </div>

@@ -22,14 +22,17 @@ import { ListearticlesComponent } from './components/LISTE/listearticles/listear
 import { ListeseriesComponent } from './components/LISTE/listeseries/listeseries.component';
 import { ListemoviesComponent } from './components/LISTE/listemovies/listemovies.component';
 
+import { ConnectionGuard } from './guards/connection.guard';
+import { DeconnectionGuard } from './guards/deconnection.guard';
+
 
 const appRoutes: Routes = [
 
 	{ path: '', component: HomeComponent },
-	{ path: 'addarticle', component: AddarticleComponent },
-	{ path: 'login', component: LoginComponent },
-	{ path: 'register', component: RegisterComponent },
-	{ path: 'profil', component: ProfilComponent },
+	{ path: 'addarticle', component: AddarticleComponent, canActivate: [ConnectionGuard] },
+	{ path: 'login', component: LoginComponent, canActivate: [DeconnectionGuard] },
+	{ path: 'register', component: RegisterComponent, canActivate: [DeconnectionGuard] },
+	{ path: 'profil', component: ProfilComponent, canActivate: [ConnectionGuard] },
 
 	{ path: 'series', component: SeriesComponent },
 	{ path: 'saison', component: SaisonComponent },
@@ -70,4 +73,9 @@ export const routedComponents = [
     LoginComponent,
     RegisterComponent,
     ProfilComponent
+];
+
+export const guardServices = [
+	ConnectionGuard,
+	DeconnectionGuard
 ];

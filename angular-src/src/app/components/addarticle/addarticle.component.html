@@ -1,12 +1,15 @@
 <h1>Ajouter un Article</h1>
 
-<form class="formnewcomment">
+<form class="formnewcomment" (submit)="addArticle()">
 		
 	<table>
 
 		<tr>
 			<td><label>Titre</label></td>
-			<td><input type="text" name="titlearticle" [(ngModel)]="titlearticle"></td>
+			<td><input type="text" name="title" [(ngModel)]="title"></td>
+
+			<td><label>Image</label></td>
+			<td><input type="text" name="img" [(ngModel)]="img" placeholder="(https://...image.jpg)"></td>
 		</tr>
 
 		<tr>
@@ -14,7 +17,7 @@
 		</tr>
 
 		<tr>
-			<td colspan="2"><textarea type="text" name="descriptionarticle" [(ngModel)]="descriptionarticle"></textarea> </td>
+			<td colspan="2"><textarea type="text" name="synopsis" [(ngModel)]="synopsis"></textarea> </td>
 		</tr>
 
 		<tr>
@@ -22,7 +25,7 @@
 		</tr>
 
 		<tr>
-			<td colspan="2"><textarea type="text" name="contentarticle" [(ngModel)]="contentarticle"></textarea> </td>
+			<td colspan="2"><textarea type="text" name="content" [(ngModel)]="content"></textarea> </td>
 		</tr>
 		
 		<tr>

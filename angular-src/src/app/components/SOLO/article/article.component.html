@@ -14,7 +14,7 @@
 			
 			<tr>
 				<td>Auteur  : </td>
-				<td>{{ article.auteur }}</td>
+				<td>{{ lastname }} {{ firstname }}</td>
 			</tr>
 
 			<tr>
@@ -29,14 +29,21 @@
 
 		<div class="notelike">
 			
-			<div class="note">
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
+			<div class="note" *ngIf="profilService.loggedIn()">
+				<img src="{{ noteurl }}" height="50" width="250">
+				<div (click)="noteStar(2)" (mouseenter) ="enterNote(2)"  (mouseleave) ="leaveNote()"></div>
+				<div (click)="noteStar(3)" (mouseenter) ="enterNote(3)"  (mouseleave) ="leaveNote()"></div>
+				<div (click)="noteStar(4)" (mouseenter) ="enterNote(4)"  (mouseleave) ="leaveNote()"></div>
+				<div (click)="noteStar(5)" (mouseenter) ="enterNote(5)"  (mouseleave) ="leaveNote()"></div>
+				<div (click)="noteStar(1)" (mouseenter) ="enterNote(1)"  (mouseleave) ="leaveNote()"></div>
 			</div>
-			<div class="like"></div>
+
+			<div class="noteglobal">{{ note || 0 }} / 5</div>
+
+			<a class="like" (click)="likeIt()">
+				<img *ngIf="likedRessource == false" src="../../../../assets/thumbs-up-regular.png" height="50" width="50">
+				<img *ngIf="likedRessource == true" src="../../../../assets/thumbs-up-solid.png" height="50" width="50">
+			</a>
 		</div>
 
 		<app-comments></app-comments>

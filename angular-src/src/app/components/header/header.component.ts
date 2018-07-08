@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LoginService } from '../../services/login.service';
+import { ProfilService } from '../../services/profil.service';
+
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 
@@ -14,6 +16,7 @@ import * as $ from "jquery";
 export class HeaderComponent implements OnInit {
 
 	constructor(
+		private profilService: ProfilService,
 		private loginService: LoginService,
   		private flashMessages: FlashMessagesService,
     	private router: Router

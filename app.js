@@ -36,10 +36,12 @@ const app           = express();
     const routeArticle  = require('./routing/routeArticle');
     const routeSerie  = require('./routing/routeSerie');
     const routeMovie  = require('./routing/routeMovie');
+    const routeComment  = require('./routing/routeComment');
     app.use('', routeUser);
     app.use('', routeArticle);
     app.use('', routeSerie);
     app.use('', routeMovie);
+    app.use('', routeComment);
 
 
 // SERVER //

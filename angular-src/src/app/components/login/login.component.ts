@@ -33,8 +33,6 @@ export class LoginComponent implements OnInit {
 	        password: this.password
     	}
 
-    	console.log(entUser);
-
     	// Vérification des champs de formulaire
 
     	let position = $(document).scrollTop() + 200;
@@ -47,8 +45,6 @@ export class LoginComponent implements OnInit {
 		}
 
 		this.loginService.loginUser(entUser).subscribe(data => {
-
-			console.log("DATA : " + data.success);
 
 	  		if (data.success) {
 

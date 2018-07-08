@@ -3,6 +3,8 @@ const router        = express.Router();
 
 const insertQuery   = require('../queries/insert');
 const selectQuery   = require('../queries/select');
+const updateQuery   = require('../queries/update');
+const deleteQuery   = require('../queries/delete');
 
 const articleController = require('../controllers/articleController');
 
@@ -17,7 +19,7 @@ router.post('/dataArticle', (req, res) => { // Get One Article
         _id: req.body._id
     }
 
-    selectQuery.selectArticle(idObject, (err, ArticleFound) => {     
+    selectQuery.selectArticle(idObject, (err, ArticleFound) => {
 
         if(err) throw err;
         if(!ArticleFound){ return res.json({success: false, msg: "Article not found !"}); }
@@ -85,116 +87,133 @@ router.get('/dataListArticlesBySoon', (req, res) => { // Get All Articles Sorted
     });
 });
 
-// series
+router.post('/addArticle', (req, res) => { // Add article (for FRONT)
 
-router.post('/dataSerie', (req, res) => { // Get One Serie
-
-    const idObject = {
-        _id: req.body._id
+    const newArticle = {
+        title: req.body.title,
+        synopsis: req.body.synopsis,
+        content: req.body.content,
+        img: req.body.img,
+        creationDate: null,
+        fk_idAuteur: req.body.idUser,
     }
 
-    selectQuery.selectSerie(idObject, (err, SerieFound) => {     
+    insertQuery.insertArticle(newArticle, (err, userAdded) => { // insert newArticle
+
+        if(err)
+            res.json({success: false, msg: "Echec de l'ajout de l'article"});
+        else
+            res.json({success: true, msg: "Ajout réussi"});
+    });  
+});
+
+// Like
+
+router.post('/selectLikeArticle', (req, res) => { // likeArticle (for FRONT)
+
+    const object = {
+        fk_idarticle: req.body.fk_idarticle,
+        fk_iduserlike: req.body.fk_iduserlike
+    }
+    
+    selectQuery.selectArticleLike(object, (err, returnObject) => { 
 
         if(err) throw err;
-        if(!SerieFound){ return res.json({success: false, msg: "Serie not found !"}); }
+        if(!returnObject || returnObject[0] == undefined){ return res.json({success: false, msg: "Article liked introuvable !"}); }
 
         res.json({
             success: true,
-            serie: SerieFound
+            articleLiked: returnObject
         });
-    });
+    });  
 });
 
-router.get('/dataListSeriesByDate', (req, res) => { // Get All Series Sorted by Date
+router.post('/deleteLikeArticle', (req, res) => { // likeArticle (for FRONT)
 
-    selectQuery.selectSeriesByDate((err, listSeriesFound) => {     
-
-        if(err) throw err;
-        if(!listSeriesFound){ return res.json({success: false, msg: "List Series not found !"}); }
-
-        res.json({
-            success: true,
-            listSeriesByDate: listSeriesFound
-        });
-    });
-});
-
-router.get('/dataListSeriesByNote', (req, res) => { // Get All Series Sorted by Note
-
-    selectQuery.selectSeriesByNote((err, listSeriesFound) => {     
-
-        if(err) throw err;
-        if(!listSeriesFound){ return res.json({success: false, msg: "List Series not found !"}); }
-
-        res.json({
-            success: true,
-            listSeriesByNote: listSeriesFound
-        });
-    });
-});
-
-// movies
-
-router.post('/dataMovie', (req, res) => { // Get One Movie
-
-    const idObject = {
-        _id: req.body._id
+    const object = {
+        fk_idarticle: req.body.fk_idarticle,
+        fk_iduserlike: req.body.fk_iduserlike
     }
 
-    console.log("here is _id : " + idObject._id);
+    deleteQuery.deleteLikeArticle(object, (err, returnObject) => { 
 
-    selectQuery.selectMovie(idObject, (err, MovieFound) => {     
-
-        if(err) throw err;
-        if(!MovieFound){ return res.json({success: false, msg: "Movie not found !"}); }
-
-        res.json({
-            success: true,
-            movie: MovieFound
-        });
-    });
+        if(err)
+            res.json({success: false, msg: "Ressource non supprimée"});
+        else
+            res.json({success: true, msg: "Ressource supprimée"});
+    });  
 });
 
-router.get('/dataListMoviesByDate', (req, res) => { // Get All Movies Sorted by Date
+router.post('/insertLikeArticle', (req, res) => { // likeArticle (for FRONT)
 
-    selectQuery.selectMoviesByDate((err, listMoviesFound) => {     
+    const object = {
+        fk_idarticle: req.body.fk_idarticle,
+        fk_iduserlike: req.body.fk_iduserlike
+    }
 
-        if(err) throw err;
-        if(!listMoviesFound){ return res.json({success: false, msg: "List Movies not found !"}); }
+    insertQuery.insertArticleLike(object, (err, returnObject) => { 
 
-        res.json({
-            success: true,
-            listMoviesByDate: listMoviesFound
-        });
-    });
+        if(err)
+            res.json({success: false, msg: "Ressource non insérée"});
+        else
+            res.json({success: true, msg: "Ressource insérée"});
+    });  
 });
 
-router.get('/dataListMoviesByNote', (req, res) => { // Get All Movies Sorted by Note
+// Note
 
-    selectQuery.selectMoviesByNote((err, listMoviesFound) => {     
+router.post('/selectNoteArticle', (req, res) => { // noteArticle (for FRONT)
+
+    const object = {
+        fk_idarticle: req.body.fk_idarticle,
+        fk_idusernote: req.body.fk_idusernote
+    }
+    
+    selectQuery.selectNoteArticle(object, (err, returnObject) => { 
 
         if(err) throw err;
-        if(!listMoviesFound){ return res.json({success: false, msg: "List Movies not found !"}); }
+        if(!returnObject || returnObject[0] == undefined){ return res.json({success: false, msg: "Article noted introuvable !"}); }
 
         res.json({
             success: true,
-            listMoviesByNote: listMoviesFound
+            articlenoted: returnObject
         });
-    });
+    });  
 });
 
-router.get('/dataListMoviesBySoon', (req, res) => { // Get All Movies Sorted by Soon
+router.post('/updateNoteArticle', (req, res) => {
 
-    selectQuery.selectMoviesBySoon((err, listMoviesFound) => {     
+    const object = {
 
-        if(err) throw err;
-        if(!listMoviesFound){ return res.json({success: false, msg: "List Movies not found !"}); }
+        id: req.body.id,
+        note: req.body.note
+    }
 
-        res.json({
-            success: true,
-            listMoviesBySoon: listMoviesFound
-        });
-    });
+    updateQuery.updateNoteArticle(object, (err, returnObject) => { 
+
+        if(err)
+            res.json({success: false, msg: "Note non mise à jour "});
+        else
+            res.json({success: true, msg: "Note mise à jour"});
+    });  
+});
+
+router.post('/insertNoteArticle', (req, res) => {
+
+    const object = {
+
+        fk_idarticle: req.body.fk_idarticle,
+        fk_idusernote: req.body.fk_idusernote,
+        note: req.body.note
+    }
+
+    insertQuery.insertNoteArticle(object, (err, returnObject) => { 
+
+        if(err)
+            res.json({success: false, msg: "Ressource non insérée"});
+        else
+            res.json({success: true, msg: "Ressource insérée"});
+    });  
 });
 
 module.exports = router;

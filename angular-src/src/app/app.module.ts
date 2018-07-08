@@ -19,6 +19,7 @@ import { MovieService } from './services/SOLO/movie.service';
 import { SerieService } from './services/SOLO/serie.service';
 import { RegisterService } from './services/register.service';
 
+import { guardServices } from './app-router.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { RegisterService } from './services/register.service';
     ArticleService,
     MovieService,
     SerieService,
-    RegisterService
+    RegisterService,
+    guardServices
   ],
   bootstrap: [AppComponent]
 })

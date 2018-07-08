@@ -127,7 +127,6 @@
 
 		#s_myspaceNav div {
 
-			padding-top: 15px; padding-bottom: 15px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -140,7 +139,7 @@
 				font-size: 13px;
 				font-weight: bold;
 				border-radius: 3px;
-				margin-top: 10px; margin-bottom: 20px;
+				margin-top: 25px; margin-bottom: 20px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -150,6 +149,7 @@
 			#s_myspaceNav div a:nth-child(2) {
 
 				font-size: 14px;
+				margin-bottom: 20px;
 				text-decoration: underline;
 			}
 
