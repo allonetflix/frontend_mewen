@@ -18,6 +18,7 @@ export class SerieService {
   			.map(res => res.json());
  	}
 
+  // Like
 
  	selectLikedSerie(object) {
 
@@ -45,4 +46,33 @@ export class SerieService {
  		return this.http.post('http://localhost:3000/insertLikeSerie', object, {headers: paramHeaders})
   			.map(res => res.json());
  	}
+
+   // Note
+
+   selectNotedSerie(object2) {
+
+     let paramHeaders = new Headers();
+      paramHeaders.append('Content-Type', 'application/json');
+
+     return this.http.post('http://localhost:3000/selectNoteSerie', object2, {headers: paramHeaders})
+        .map(res => res.json());
+   }
+
+   updateNoteSerie(object) {
+
+     let paramHeaders = new Headers();
+      paramHeaders.append('Content-Type', 'application/json');
+
+     return this.http.post('http://localhost:3000/updateNoteSerie', object, {headers: paramHeaders})
+        .map(res => res.json());
+   }
+
+   insertNotedSerie(object2) {
+
+     let paramHeaders = new Headers();
+      paramHeaders.append('Content-Type', 'application/json');
+
+     return this.http.post('http://localhost:3000/insertNoteSerie', object2, {headers: paramHeaders})
+        .map(res => res.json());
+   }
 }

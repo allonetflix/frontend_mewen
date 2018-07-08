@@ -160,7 +160,7 @@ router.post('/insertLikeArticle', (req, res) => { // likeArticle (for FRONT)
     });  
 });
 
-// Note
+// NOTE
 
 router.post('/selectNoteArticle', (req, res) => { // noteArticle (for FRONT)
 

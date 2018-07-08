@@ -168,7 +168,7 @@ export class CommentsComponent implements OnInit {
 		    });
 	    }
 
-	    if(this.url == '/serie'){
+	    if(this.url == '/series'){
 
 	    	this.commentService.addCommentSerie(newComment).subscribe(data => {
 

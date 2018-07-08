@@ -66,12 +66,19 @@ module.exports.insertSerieLike = (object, callback) => { // selectSerieLike
     db.connectionPsql(queryText, queryValues, callback);
 }
 
+module.exports.insertNoteSerie = (object, callback) => { // insertNoteSerie
+
+    const queryText = 'INSERT INTO schema.serie_note ( fk_idserie, fk_idusernote, note) VALUES ($1, $2, $3);';
+    const queryValues = [object.fk_idserie, object.fk_idusernote, object.note];
+
+    db.connectionPsql(queryText, queryValues, callback);
+}
+
 // Movie
 
 module.exports.insertMovieLike = (object, callback) => { // selectMovieLike
 
-    console.log("In Insert fk_idmovie " + object.fk_idmovie);
-    console.log("In Insert fk_iduserlike " + object.fk_iduserlike);
+    
 
     const queryText = 'INSERT INTO schema.movie_like (fk_idmovie, fk_iduserlike) VALUES ($1, $2);';
     const queryValues = [object.fk_idmovie, object.fk_iduserlike];
@@ -79,6 +86,14 @@ module.exports.insertMovieLike = (object, callback) => { // selectMovieLike
     db.connectionPsql(queryText, queryValues, callback);
 
     // INSERT INTO schema.movie_like (fk_idmovie, fk_iduserlike) VALUES (1, 1);
+}
+
+module.exports.insertNoteMovie = (object, callback) => { // insertNoteMovie
+
+    const queryText = 'INSERT INTO schema.movie_note ( fk_idMovie, fk_idUsernote, note) VALUES ($1, $2, $3);';
+    const queryValues = [object.fk_idmovie, object.fk_idusernote, object.note];
+
+    db.connectionPsql(queryText, queryValues, callback);
 }
 
 // Comment
@@ -91,7 +106,6 @@ module.exports.insertCommentArticle = (newComment, callback) => {
     db.connectionPsql(queryText, queryValues, callback);
 }
 
-
 module.exports.insertCommentSerie = (newComment, callback) => {
 
     const queryText = 'INSERT INTO schema.comment (title, content, fk_idAuteur, fk_idSerie) VALUES ($1, $2, $3, $4);';
@@ -101,8 +115,6 @@ module.exports.insertCommentSerie = (newComment, callback) => {
 }
 
 module.exports.insertCommentMovie = (newComment, callback) => {
-
-    console.log("ISNERT COMMENT FK_MOVIE : " + newComment.fk_idMovie);
 
     const queryText = 'INSERT INTO schema.comment (title, content, fk_idAuteur, fk_idMovie) VALUES ($1, $2, $3, $4);';
     const queryValues = [ newComment.title, newComment.content, newComment.idUser, newComment.fk_idMovie ];

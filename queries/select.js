@@ -130,6 +130,14 @@ const db	        = require('../middlewares/connection');
         db.connectionPsql(queryText, queryValues, callback);
     }
 
+    module.exports.selectNoteSerie = (object, callback) => { // selectNoteSerie
+
+        const queryText = 'SELECT * FROM schema.serie_note WHERE fk_idserie = $1 AND fk_idusernote = $2;';
+        const queryValues = [object.fk_idserie, object.fk_idusernote];
+
+        db.connectionPsql(queryText, queryValues, callback);
+    }
+
 // Movie
 
     module.exports.selectMovie = (idObject, callback) => { // selectMovie
@@ -176,6 +184,14 @@ const db	        = require('../middlewares/connection');
 
         const queryText = 'SELECT * FROM schema.movie_like WHERE fk_idmovie = $1 AND fk_iduserlike = $2;';
         const queryValues = [object.fk_idmovie, object.fk_iduserlike];
+
+        db.connectionPsql(queryText, queryValues, callback);
+    }
+
+    module.exports.selectNoteMovie = (object, callback) => { // selectNoteMovie
+
+        const queryText = 'SELECT * FROM schema.movie_note WHERE fk_idmovie = $1 AND fk_idusernote = $2;';
+        const queryValues = [object.fk_idmovie, object.fk_idusernote];
 
         db.connectionPsql(queryText, queryValues, callback);
     }

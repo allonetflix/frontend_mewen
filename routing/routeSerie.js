@@ -119,4 +119,61 @@ router.post('/insertLikeSerie', (req, res) => { // likeSerie (for FRONT)
     });  
 });
 
+
+// NOTE
+
+router.post('/selectNoteSerie', (req, res) => { // noteSerie (for FRONT)
+
+    const object = {
+        fk_idserie: req.body.fk_idserie,
+        fk_idusernote: req.body.fk_idusernote
+    }
+    
+    selectQuery.selectNoteSerie(object, (err, returnObject) => { 
+
+        if(err) throw err;
+        if(!returnObject || returnObject[0] == undefined){ return res.json({success: false, msg: "Serie noted introuvable !"}); }
+
+        res.json({
+            success: true,
+            serienoted: returnObject
+        });
+    });  
+});
+
+router.post('/updateNoteSerie', (req, res) => {
+
+    const object = {
+
+        id: req.body.id,
+        note: req.body.note
+    }
+
+    updateQuery.updateNoteSerie(object, (err, returnObject) => { 
+
+        if(err)
+            res.json({success: false, msg: "Note non mise à jour "});
+        else
+            res.json({success: true, msg: "Note mise à jour"});
+    });  
+});
+
+router.post('/insertNoteSerie', (req, res) => {
+
+    const object = {
+
+        fk_idserie: req.body.fk_idserie,
+        fk_idusernote: req.body.fk_idusernote,
+        note: req.body.note
+    }
+
+    insertQuery.insertNoteSerie(object, (err, returnObject) => { 
+
+        if(err)
+            res.json({success: false, msg: "Ressource non insérée"});
+        else
+            res.json({success: true, msg: "Ressource insérée"});
+    });  
+});
+
 module.exports = router;

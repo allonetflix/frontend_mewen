@@ -18,6 +18,8 @@ export class MovieService {
   			.map(res => res.json());
  	}
 
+  // Like
+
  	selectLikedMovie(object) {
 
  		let paramHeaders = new Headers();
@@ -37,8 +39,6 @@ export class MovieService {
  	}
 
  	insertLikedMovie(object) {
-
- 		// console.log("In Service it");
 	
 		let paramHeaders = new Headers();
 	    paramHeaders.append('Content-Type', 'application/json');
@@ -46,4 +46,33 @@ export class MovieService {
  		return this.http.post('http://localhost:3000/insertLikeMovie', object, {headers: paramHeaders})
   			.map(res => res.json());
  	}
+
+   // Note
+
+   selectNotedMovie(object2) {
+
+     let paramHeaders = new Headers();
+      paramHeaders.append('Content-Type', 'application/json');
+
+     return this.http.post('http://localhost:3000/selectNoteMovie', object2, {headers: paramHeaders})
+        .map(res => res.json());
+   }
+
+   updateNoteMovie(object) {
+
+     let paramHeaders = new Headers();
+      paramHeaders.append('Content-Type', 'application/json');
+
+     return this.http.post('http://localhost:3000/updateNoteMovie', object, {headers: paramHeaders})
+        .map(res => res.json());
+   }
+
+   insertNotedMovie(object2) {
+
+     let paramHeaders = new Headers();
+      paramHeaders.append('Content-Type', 'application/json');
+
+     return this.http.post('http://localhost:3000/insertNoteMovie', object2, {headers: paramHeaders})
+        .map(res => res.json());
+   }
 }

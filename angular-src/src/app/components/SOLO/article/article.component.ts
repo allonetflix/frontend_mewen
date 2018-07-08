@@ -162,13 +162,15 @@ export class ArticleComponent implements OnInit {
 		}
 	}
 
+	// ============================================ //
+
 	noteStar(numberStar) {
 
 		let position = $(document).scrollTop() + 200;
 
 		if(this.notedRessource == true){
 
-			this.flashMessages.show("Vous avez déjà noté cet Article", {cssClass: 'flashfade alert-orange', timeout: 3000 });
+			this.flashMessages.show("Vous avez déjà noté cet article", {cssClass: 'flashfade alert-orange', timeout: 3000 });
 			$(".flash-message").css("top", position );
 			return false;
 		}
@@ -276,5 +278,7 @@ export class ArticleComponent implements OnInit {
 			this.noteurl = "../../../../assets/stars/5_stars.png";
 		}
 	}
+
+	// ============================================ //
 
 }
