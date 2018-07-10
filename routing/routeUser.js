@@ -149,5 +149,74 @@ router.post('/nameUser', (req, res) => { // Get One User
     });
 });
 
+router.post('/searchRessources', (req, res) => { // Search Ressources
+
+    const object = {
+        search: req.body.search + "%",
+    }
+
+    console.log("OBJECT IN BACK : " + object.search);
+
+    selectQuery.searchRessourcesArticles(object, (err, articlesFound) => {     
+
+        if(err) throw err;
+        
+        const articlesFoundObject = articlesFound;
+
+        selectQuery.searchRessourcesSeries(object, (err, seriesFound) => {   
+
+            if(err) throw err;
+
+            const seriesFoundObject = seriesFound;
+
+            selectQuery.searchRessourcesMovies(object, (err, moviesFound) => {     
+
+                if(err) throw err;
+
+                const moviesFoundObject = moviesFound;
+
+                res.json({
+                    success: true,
+                    articlesFound: articlesFoundObject,
+                    seriesFound: seriesFoundObject,
+                    moviesFound: moviesFoundObject,
+                });
+            });
+        });
+    });
+
+});
+
+router.post('/deleteDataUser', (req, res) => {
+
+    const object = {
+
+        id: req.body.id
+    }
+
+    deleteQuery.deleteDataUser(object.id, (err, userFound) => {     
+
+        if(err) throw err;
+        if(!userFound){ return res.json({success: false, msg: "User not found !"}); }
+
+        res.json({ success: true });
+    });
+});
+
+router.post('/deleteUser', (req, res) => {
+
+    const object = {
+        
+        id: req.body.id
+    }
+
+    deleteQuery.deleteUser(object.id, (err, userFound) => {     
+
+        if(err) throw err;
+        if(!userFound){ return res.json({success: false, msg: "User not found !"}); }
+
+        res.json({ success: true });
+    });
+});
 
 module.exports = router;

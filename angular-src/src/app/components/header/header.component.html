@@ -8,8 +8,8 @@
 
             <span>
 
-                <input type="text">
-                <label>Recherche</label>
+                <input type="text" [(ngModel)]="research" (keyup.enter)="onKey()">
+                <a id="btnsearch" href="/search?research={{ research }}">Recherche</a>
             </span>
         </div>
     </div>

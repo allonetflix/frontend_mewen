@@ -46,7 +46,6 @@ export class ProfilComponent implements OnInit {
 	  	}, 
 	  	err => { return false; });
 
-
 	}
 
 	updateSubmit(){
@@ -100,6 +99,58 @@ export class ProfilComponent implements OnInit {
 			else {
 
 				this.flashMessages.show(data.msg, {cssClass: 'flashfade alert-red', timeout: 3000 });
+				$(".flash-message").css("top", position );
+				this.router.navigate(['/profil']);
+			}
+	    });
+	}
+
+	deleteDataUser() {
+
+		const object = {
+
+			id: this.idUser
+		}
+
+		this.profilService.deleteDataUser(object).subscribe(data => {
+
+	    	let position = $(document).scrollTop() + 200;
+
+			if(data.success){
+
+				this.flashMessages.show("Suppression des données personnelles", {cssClass: 'flashfade alert-blue', timeout: 3000 });
+				$(".flash-message").css("top", position );
+				this.router.navigate(['/']);
+			}
+			else {
+
+				this.flashMessages.show("Échec de la suppression des données personnelles", {cssClass: 'flashfade alert-red', timeout: 3000 });
+				$(".flash-message").css("top", position );
+				this.router.navigate(['/profil']);
+			}
+	    });
+	}
+
+	deleteUser() {
+
+		const object = {
+
+			id: this.idUser
+		}
+
+		this.profilService.deleteUser(object).subscribe(data => {
+
+	    	let position = $(document).scrollTop() + 200;
+
+			if(data.success){
+
+				this.flashMessages.show("Suppression du compte réussie", {cssClass: 'flashfade alert-blue', timeout: 3000 });
+				$(".flash-message").css("top", position );
+				this.router.navigate(['/']);
+			}
+			else {
+
+				this.flashMessages.show("Échec de la suppression de compte", {cssClass: 'flashfade alert-red', timeout: 3000 });
 				$(".flash-message").css("top", position );
 				this.router.navigate(['/profil']);
 			}

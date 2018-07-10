@@ -15,6 +15,8 @@ import * as $ from "jquery";
 })
 export class HeaderComponent implements OnInit {
 
+	research: any;
+
 	constructor(
 		private profilService: ProfilService,
 		private loginService: LoginService,
@@ -32,4 +34,10 @@ export class HeaderComponent implements OnInit {
 		this.loginService.logoutUser();
 		this.flashMessages.show("Vous êtes déconnecté", {cssClass: 'flashfade alert-blue', timeout: 3000});
 	}
+
+	onKey() {
+
+		const path = '/search?research=';
+		window.location.replace(path + this.research);
+	}	
 }

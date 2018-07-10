@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { HomeService } from '../../services/home.service';
 
+import * as $ from "jquery";
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -72,6 +74,13 @@ export class HomeComponent implements OnInit {
   	}
 
 	ngOnInit() {
+
+	    $("#loading_bg span").on("click", ()=>{
+
+	    	console.log("Hello");
+
+	    	$("#loading_bg").css("display", "none");
+	    });	
 
 		carousel();	
 

@@ -30,6 +30,33 @@ const db	        = require('../middlewares/connection');
         });
     }
 
+    // Search 
+
+    module.exports.searchRessourcesArticles = (object, callback) => { // searchRessourcesArticles
+
+        const queryText = 'SELECT * FROM schema.article WHERE title LIKE $1;';
+        const queryValues = [object.search];
+
+        db.connectionPsql(queryText, queryValues, callback);
+    }
+
+    module.exports.searchRessourcesSeries = (object, callback) => { // searchRessourcesSeries
+
+        const queryText = 'SELECT * FROM schema.serie WHERE title LIKE $1;';
+        const queryValues = [object.search];
+
+        db.connectionPsql(queryText, queryValues, callback);
+    }
+
+    module.exports.searchRessourcesMovies = (object, callback) => { // searchRessourcesMovies
+
+        const queryText = 'SELECT * FROM schema.movie WHERE title LIKE $1;';
+        const queryValues = [object.search];
+
+        db.connectionPsql(queryText, queryValues, callback);
+    }
+
+
 // Article
 
     module.exports.selectArticle = (idObject, callback) => { // selectArticle

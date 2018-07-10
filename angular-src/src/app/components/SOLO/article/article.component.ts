@@ -23,12 +23,10 @@ export class ArticleComponent implements OnInit {
 	firstname: string;
 	id:number;
 	likedRessource:boolean;
-	// ============================================ //
 	notedRessource:boolean;
 	note: number;
 	noteurl: string;
 	noteUser:number;
-	// ============================================ //
 
 	constructor(
 		private profilService: ProfilService,
@@ -68,8 +66,6 @@ export class ArticleComponent implements OnInit {
 		  	}, 
 		  	err => { return false; });
 
-		  	// =============================================== //
-
 		  	// Check Noted
 
 		  	const object2 = {
@@ -96,8 +92,6 @@ export class ArticleComponent implements OnInit {
 		  	}, 
 		  	err => { return false; });
 
-		  	// ============================================ //
-
 	  	}, 
 	  	err => { return false; });
 
@@ -109,9 +103,7 @@ export class ArticleComponent implements OnInit {
 
 			this.article = data.article[0];
 			this.fk_idauteur = data.article[0].fk_idauteur;
-			// ============================================ //
 			this.note = data.article[0].note;
-			// ============================================ //
 
 			// Get author of article
 
@@ -161,8 +153,6 @@ export class ArticleComponent implements OnInit {
 			}, err => { return false; });
 		}
 	}
-
-	// ============================================ //
 
 	noteStar(numberStar) {
 
@@ -278,7 +268,5 @@ export class ArticleComponent implements OnInit {
 			this.noteurl = "../../../../assets/stars/5_stars.png";
 		}
 	}
-
-	// ============================================ //
 
 }

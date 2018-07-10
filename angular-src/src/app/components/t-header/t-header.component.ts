@@ -69,4 +69,10 @@ export class THeaderComponent implements OnInit {
 		this.flashMessages.show("Vous êtes déconnecté", {cssClass: 'flashfade alert-blue', timeout: 3000});
 	}
 
+	onKey() {
+
+		const path = '/search?research=';
+		window.location.replace(path + this.research);
+	}	
+
 }

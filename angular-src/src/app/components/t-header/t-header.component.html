@@ -17,7 +17,7 @@
 
     <div id="t_searchbar">
 
-        <input type="text" name="searchbar">
+        <input type="text" [(ngModel)]="research" name="searchbar" (keyup.enter)="onKey()">
         <a (click)="onClickSearchBar()">Recherche</a>
     </div>
 

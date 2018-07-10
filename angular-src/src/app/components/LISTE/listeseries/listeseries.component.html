@@ -1,6 +1,6 @@
 <h1>Liste des Séries</h1>
 
-<ul>
+<ul *ngIf="listSeries[0] !== undefined; else elseBlock">
 	<li class="list" *ngFor="let serie of listSeries; let i = index">
 		
 		<div class="imglist"><img src="{{ serie.img }}" height="180px" width="150px"/></div>
@@ -10,3 +10,11 @@
 		</div>
 	</li>
 </ul>
+
+<ng-template #elseBlock>
+<div id="noResources">
+	
+	<span>Ressources introuvables</span>
+
+</div>
+</ng-template>

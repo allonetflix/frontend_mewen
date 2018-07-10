@@ -1,5 +1,10 @@
 <div id="home">
 
+	<div id="loading_bg">
+		En continuant la navigation sur ce site, vous acceptez l'usage de cookies.
+		<span>X</span>
+	</div>
+
 	<!-- carousel -->
 	<div id="slider">
 
@@ -30,8 +35,8 @@
 
 	<ul class="navTitleHome">
 		
-		<li><a href="#">#Meilleurs article</a></li>
-		<li><a href="#">#Derniers article</a></li>
+		<li><a href="/listearticles?sorting=bynote">#Meilleurs article</a></li>
+		<li><a href="/listearticles?sorting=bydate">#Derniers article</a></li>
 
 	</ul>
 
@@ -58,7 +63,7 @@
 					<li class="panelHome" *ngFor="let article of listArticlesByDate; let i = index">
 						
 						<div class="imgPanelHome"><img src="{{ article.img }}" height="180px" width="150px" /></div>
-						<div class="titlePanelHome">{{ article.title }}</div>
+						<a href="/article?id={{ article.idarticle }}" class="titlePanelHome">{{ article.title }}</a>
 						<div class="descriptionPanelHome">{{ article.auteur }}</div>
 					</li>
 				</ul>
@@ -83,7 +88,7 @@
 					<li class="panelHome" *ngFor="let article of listArticlesByNote; let i = index">
 						
 						<div class="imgPanelHome"><img src="{{ article.img }}" height="180px" width="150px" /></div>
-						<div class="titlePanelHome">{{ article.title }}</div>
+						<a href="/article?id={{ article.idarticle }}" class="titlePanelHome">{{ article.title }}</a>
 						<div class="descriptionPanelHome">{{ article.auteur }}</div>
 					</li>
 				</ul>
@@ -112,8 +117,8 @@
 
 	<ul class="navTitleHome">
 		
-		<li><a href="#">#Meilleures séries</a></li>
-		<li><a href="#">#Dernieres séries</a></li>
+		<li><a href="/listeseries?sorting=bynote">#Meilleures séries</a></li>
+		<li><a href="/listeseries?sorting=bydate">#Dernières séries</a></li>
 
 	</ul>
 
@@ -140,7 +145,7 @@
 					<li class="panelHome" *ngFor="let serie of listSeriesByDate; let i = index">
 						
 						<div class="imgPanelHome"><img src="{{ serie.img }}" height="180px" width="150px" /></div>
-						<div class="titlePanelHome">{{ serie.title }}</div>
+						<a href="/series?id={{ serie.idserie }}" class="titlePanelHome">{{ serie.title }}</a>
 						<div class="descriptionPanelHome">{{ serie.distributor }}</div>
 					</li>
 				</ul>
@@ -165,7 +170,7 @@
 					<li class="panelHome" *ngFor="let serie of listSeriesByNote; let i = index">
 						
 						<div class="imgPanelHome"><img src="{{ serie.img }}" height="180px" width="150px" /></div>
-						<div class="titlePanelHome">{{ serie.title }}</div>
+						<a href="/series?id={{ serie.idserie }}" class="titlePanelHome">{{ serie.title }}</a>
 						<div class="descriptionPanelHome">{{ serie.distributor }}</div>
 					</li>
 				</ul>
@@ -175,12 +180,12 @@
 
 	<!-- Movies -->
 
-	<h1 class="titleHome">Movies</h1>
+	<h1 class="titleHome">Films</h1>
 
 	<ul class="navTitleHome">
 		
-		<li><a href="#">#Meilleurs films</a></li>
-		<li><a href="#">#Derniers films</a></li>
+		<li><a href="/listemovies?sorting=bynote">#Meilleurs films</a></li>
+		<li><a href="/listemovies?sorting=bydate">#Derniers films</a></li>
 
 	</ul>
 
@@ -207,7 +212,7 @@
 					<li class="panelHome" *ngFor="let movie of listMoviesByDate; let i = index">
 						
 						<div class="imgPanelHome"><img src="{{ movie.img }}" height="180px" width="150px" /></div>
-						<div class="titlePanelHome">{{ movie.title }}</div>
+						<a href="/movie?id={{ movie.idmovie }}" class="titlePanelHome">{{ movie.title }}</a>
 						<div class="descriptionPanelHome">{{ movie.realisator }}</div>
 					</li>
 				</ul>
@@ -232,7 +237,7 @@
 					<li class="panelHome" *ngFor="let movie of listMoviesByNote; let i = index">
 						
 						<div class="imgPanelHome"><img src="{{ movie.img }}" height="180px" width="150px" /></div>
-						<div class="titlePanelHome">{{ movie.title }}</div>
+						<a href="/movie?id={{ movie.idmovie }}" class="titlePanelHome">{{ movie.title }}</a>
 						<div class="descriptionPanelHome">{{ movie.realisator }}</div>
 					</li>
 				</ul>

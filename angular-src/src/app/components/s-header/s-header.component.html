@@ -12,7 +12,10 @@
 
     <div id="s_searchbar">
 
-        <input type="text" name="s_searchbar">
+        <!-- <input type="text" [(ngModel)]="research" (keyup.enter)="onKey()">
+        <a id="btnsearch" href="/search?research={{ research }}">Recherche</a> -->
+
+        <input type="text" [(ngModel)]="research" (keyup.enter)="onKey()">
         <a (click)="onClickS_SearchBar()">Recherche</a>
     </div>
 

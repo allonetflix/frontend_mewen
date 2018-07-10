@@ -16,6 +16,7 @@ import * as $ from "jquery";
 export class SHeaderComponent implements OnInit {
 
 	isClickedS_Searchbar:boolean = true;
+	research: any;
 
 	constructor(
 		private profilService: ProfilService,
@@ -35,7 +36,6 @@ export class SHeaderComponent implements OnInit {
 	onClickS_SearchBar() {
 
 		this.isClickedS_Searchbar = !this.isClickedS_Searchbar;
-		console.log(this.isClickedS_Searchbar);
 
 		(<any>document.querySelector("#s_searchbar input")).style.transform = (this.isClickedS_Searchbar == true)  ? 'translateX(150%)' : 'translateX(0%)';
 	}
@@ -47,4 +47,10 @@ export class SHeaderComponent implements OnInit {
 		this.loginService.logoutUser();
 		this.flashMessages.show("Vous êtes déconnecté", {cssClass: 'flashfade alert-blue', timeout: 3000});
 	}
+
+	onKey() {
+
+		const path = '/search?research=';
+		window.location.replace(path + this.research);
+	}	
 }
