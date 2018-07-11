@@ -73,14 +73,22 @@
 			<td><label>Date de naissance</label></td>
 		</tr>
 		<tr>
-			<td><input type="date" name="birthDay" [(ngModel)]="birthDay"></td>
+			<td><input type="date" name="birthDay" [(ngModel)]="birthDay" (input)="checkDate()"></td>
+		</tr>
+
+		<tr *ngIf="compareDate < 16 && rgpdUser">
+			<td><label>Accord parental</label></td>
+		</tr>
+		<tr *ngIf="compareDate < 16 && rgpdUser">
+			<td><input type="radio" name="p_agreement" value="yes" [(ngModel)]="p_agreement" checked>Oui</td>
+		    <td><input type="radio" name="p_agreement" value="no" [(ngModel)]="p_agreement">Non</td>
 		</tr>
 
 
 		<tr>
 			<td><label>RGPD</label></td>
 		</tr>
-		<tr>
+		<tr id="rgpdTr">
 			<td><input type="radio" name="rgpd" value="true" [(ngModel)]="rgpd" checked>Oui</td>
 		    <td><input type="radio" name="rgpd" value="false" [(ngModel)]="rgpd">Non</td>
 		</tr>
@@ -90,7 +98,7 @@
 			<td><input class="submitbtn" type="submit" value="Modification"></td>
 		</tr>
 
-		<tr>
+		<tr *ngIf="rgpdUser" id="groupbtn">
 			<td><div id="databtn" (click)="deleteDataUser()">Supprimer les données personnelles</div></td>
 		</tr>
 

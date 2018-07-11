@@ -49,7 +49,7 @@ header {
 
 	#t_searchbar {
 
-		height: 100%; width: 75%;
+		height: 100%; width: auto;
 		display: flex;
 		align-items: center;
 		background-color: purple;
@@ -77,6 +77,8 @@ header {
 	#btn_myspace {
 
 		height: 50px; width: 50px;
+		position: absolute;
+		right: 0;
 		background-color: blue;
 		z-index: 1;
 	}

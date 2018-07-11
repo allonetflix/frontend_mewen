@@ -4,7 +4,7 @@
 
 	<ul id="s_navbar">
           
-        <li><a href="/">Home</a></li>
+        <li><a href="/">Accueil</a></li>
         <li><a href="/listearticles">Articles</a></li>
         <li><a href="/listeseries">Séries</a></li>
         <li><a href="/listemovies">Films</a></li>
@@ -16,12 +16,12 @@
         <a id="btnsearch" href="/search?research={{ research }}">Recherche</a> -->
 
         <input type="text" [(ngModel)]="research" (keyup.enter)="onKey()">
-        <a (click)="onClickS_SearchBar()">Recherche</a>
+        <a (click)="onClickS_SearchBar()"><i class="fas fa-search"></i></a>
     </div>
 
     <div id="s_myspace">
 
-        <a>Mon Espace</a>
+        <a><i class="far fa-user-circle" style="color: black;"></i></a>
 
         <div id="s_myspaceNav">
 

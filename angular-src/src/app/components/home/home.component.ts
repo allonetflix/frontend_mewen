@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { carousel } from './carousel';
 import { Router } from '@angular/router';
 
+import { AppComponent } from '../../app.component';
 import { HomeService } from '../../services/home.service';
 
 import * as $ from "jquery";
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
 
 	constructor(
 		private homeService: HomeService,
+		private appComponent: AppComponent,
   		private router: Router
   	) {
 
@@ -74,13 +76,6 @@ export class HomeComponent implements OnInit {
   	}
 
 	ngOnInit() {
-
-	    $("#loading_bg span").on("click", ()=>{
-
-	    	console.log("Hello");
-
-	    	$("#loading_bg").css("display", "none");
-	    });	
 
 		carousel();	
 
@@ -151,5 +146,12 @@ export class HomeComponent implements OnInit {
 				}
 			}
 		}
+	}
+
+	hideCookies() {
+
+		this.appComponent.cookies = false;
+
+		localStorage.setItem('cookies', 'false');
 	}
 }

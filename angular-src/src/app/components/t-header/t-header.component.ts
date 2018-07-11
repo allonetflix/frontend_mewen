@@ -18,6 +18,7 @@ export class THeaderComponent implements OnInit {
 	isClickedNav:boolean;
 	isClickedMyspace:boolean;
 	isClickedSearchbar:boolean = true;
+	research: any;
 
 	constructor(
 		private profilService: ProfilService,

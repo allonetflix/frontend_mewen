@@ -2,7 +2,7 @@
 
     <ul id="t_nav">
       
-        <li><a href="/">Home</a></li>
+        <li><a href="/">Accueil</a></li>
         <li><a href="/listearticles">Articles</a></li>
         <li><a href="/listeseries">Séries</a></li>
         <li><a href="/listemovies">Films</a></li>
@@ -11,17 +11,17 @@
 
 <header id="t_header">
 
-	<a id="btn_nav" (click)="onClickNav()">Mes Rubriques</a>
+	<a id="btn_nav" (click)="onClickNav()"><i class="fas fa-list-ul"></i></a>
 
     <div id="t_logo"><span id="icon"></span></div>
 
     <div id="t_searchbar">
 
         <input type="text" [(ngModel)]="research" name="searchbar" (keyup.enter)="onKey()">
-        <a (click)="onClickSearchBar()">Recherche</a>
+        <a (click)="onClickSearchBar()"><i class="fas fa-search"></i></a>
     </div>
 
-    <a id="btn_myspace" (click)="onClickMyspace()">Mon Espace</a>
+    <a id="btn_myspace" (click)="onClickMyspace()"><i class="far fa-user-circle"></i></a>
 
 </header>
 

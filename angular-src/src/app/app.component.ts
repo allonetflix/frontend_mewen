@@ -10,12 +10,17 @@ export class AppComponent {
 	isTablet:boolean;
 	isComputer:boolean;
 	isScrolled:boolean = false;
+	public cookies:boolean;
 
 	title = 'app';
 
 	constructor(ngZone:NgZone) {
 
-		// console.log(this.isScrolled);
+		if(localStorage.getItem('cookies') != 'false' ) {
+			this.cookies = true;
+		} else { this.cookies = false; }
+
+		console.log("LOCAL STORAGE COOKIES : " + this.cookies);
 
 		ngZone.run(() => {
 

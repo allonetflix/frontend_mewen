@@ -86,6 +86,25 @@ button {
 	background-color: red;
 }
 
+.far {
+	color: black;
+    height: 100%;
+    width: 100%;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fas {
+	color: black;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Large devices (large desktops, 1200px and down) */
 @media (max-width: 1200px) { }
