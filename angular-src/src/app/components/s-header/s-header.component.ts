@@ -37,7 +37,7 @@ export class SHeaderComponent implements OnInit {
 
 		this.isClickedS_Searchbar = !this.isClickedS_Searchbar;
 
-		(<any>document.querySelector("#s_searchbar input")).style.transform = (this.isClickedS_Searchbar == true)  ? 'translateX(150%)' : 'translateX(0%)';
+		(<any>document.querySelector("#s_searchbar input")).style.transform = (this.isClickedS_Searchbar == true)  ? 'translateX(150%)' : 'translateX(30%)';
 	}
 
 	logoutUser(){

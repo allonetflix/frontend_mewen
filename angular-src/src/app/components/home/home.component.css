@@ -45,7 +45,6 @@
 
 		height: 50px; width: 100%;
 		position: relative; top: -50px;
-		background-color: green;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -53,62 +52,77 @@
 	.btnPanel {
 
 		height: 100%; width: 50px;
-		font-size: 20px;
 		font-weight: bold;
-		background-color: grey;
+		color: #141414;
+		font-size: 25px;
+		background-color: rgba(153, 153, 153, 0.5);
+		border-radius: 3px;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		cursor: pointer;
 		user-select: none; 
+		transition: all ease-in-out 0.3s;
+	}
+
+	.btnPanel:hover, .pointPanel:hover {
+		background-color: rgba(153, 153, 153, 0.6);
+	}
+
+	.btnPanel:active, .pointPanel:active {
+		transition: all ease-in-out 0.13s;
+		background-color: rgba(235, 235, 235, 0.7);
+	}
+
+	.pointPanel:hover {
+		border: 1px solid rgba(153, 153, 153, 0.9);
+	}
+
+	.pointPanel:active {
+		border: 1px solid rgba(235, 235, 235, 1);
 	}
 
 	#groupdPointPanel {
-
 		height: 100%; width: 13%;
 		min-width: 80px;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		background-color: pink;
 	}
 
 		.pointPanel {
-
 			height: 20px; width: 20px;
 			border-radius: 50px;
 			cursor: pointer;
-			background-color: white;
+			background-color: rgba(153, 153, 153, 0.5);
+			border: 1px solid rgba(153, 153, 153, 0.8);
 		}
 
 /*end slider*/
 
 
 .titleHome {
-
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding-top: 25px;
 	padding-bottom: 15px;
-	background-color: blue;
 }
 
 .navTitleHome {
-
 	display: flex;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	justify-content: space-around;
-	background-color: orange;
+	background-color: #999;
 }
 
 .elementHome {
-
 	height: 600px; width: 100%;
 	display: flex;
-	background-color: lightblue;
+	position: relative;
+	box-shadow: 0px -2px 5px rgba(0,0,0,0.5);
 }
 
 	.elementHome > div {
@@ -116,14 +130,14 @@
 		height: 600px; width: 80%;
 		display: flex;
 		flex-direction: column;
-		background-color: teal;
+		border-right: 2px solid #3d3d3d;
 	}
 
 		.bestHome, .lastHome {
 
 			height: 300px; width: 100%;
 			max-width: 680px; min-width: 400px;
-			background-color: lightblue;
+			background: radial-gradient(#bfbfbf, white);
 		}
 
 			.subTitleHome {
@@ -132,7 +146,8 @@
 				display: flex;
 				align-items: center;
 				padding-left: 10px;
-				background-color: purple;
+				background-color: #141414;
+				color: white;
 				justify-content: space-between;
 			}
 
@@ -155,6 +170,7 @@
 						background-color: blue;
 						cursor: pointer;
 						user-select: none;
+						background-color: #DE0611;
 					}
 
 					.groupPointsSubTitle div:nth-child(1) {
@@ -167,14 +183,14 @@
 				height: 250px;
 				display: inline-flex;
 				transition: all 0.5s ease-in-out;
-				background-color: lightgreen;
 			}
 
 				.panelHome {
 
 					height: 230px; width: 150px;
 					padding: 10px;
-					background-color: darkgrey;
+					border-right: 2px solid #3d3d3d;
+					background-color: rgba(255,255,255, 0.3);
 				}
 
 					.imgPanelHome {
@@ -190,7 +206,8 @@
 						padding-left: 5px;
 						padding-right: 5px;
 						padding-top: 5px;
-						background-color: orange;
+						background-color: #141414;
+						color:white;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 						overflow: hidden;
@@ -202,7 +219,9 @@
 						padding-left: 5px;
 						padding-right: 5px;
 						padding-top: 5px;
-						background-color: blue;
+						background-color: #DE0611;
+						font-size: 15px;
+						color: white;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 						overflow: hidden;
@@ -218,12 +237,15 @@
 		.subTitleAsideHome {
 
 			padding-left: 25px;
+			background-color: #DE0611;
+			box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+			position: relative;
 		}
 
 		.listAsidePanelHome {
 
 			height: 550px; width: 100%;
-			background-color: cornflowerblue;
+			background-color: #999;
 		}
 
 			.asidePanelHome {

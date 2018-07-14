@@ -2,12 +2,10 @@
 
 	height: 0; width: 100%;
 	position: fixed; top: 0;
-	background-color: grey;
+	background-color: #141414;
 	display: flex;
 	transition: all 0.5s ease-in-out;
 	z-index: 10;
-	/*margin-left: auto; margin-right: auto;
-	width: 70%;*/
 }
 
 .slideDown {
@@ -22,7 +20,9 @@
 	align-items: center;
 	justify-content: center;
 	position: initial;
-	background-color: black;
+	background-color: #141414;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 	#icon {
 
@@ -32,25 +32,17 @@
 		background-color: red;
 		background-image: url(../../../assets/icon_40.jpg);
 		border-radius: 5px;
-
-		-webkit-animation: fadein 2.5s; /* Safari, Chrome and Opera > 12.1 */
-        -moz-animation: fadein 2.5s; /* Firefox < 16 */
-        -ms-animation: fadein 2.5s; /* Internet Explorer */
-         -o-animation: fadein 2.5s; /* Opera < 12.1 */
-            animation: fadein 2.5s;
 	}
 
 #s_navbar {
 
 	height: 100%; width: calc(100% - 200px);
 	display: flex;
-	background-color: lightblue;
 }
 
 	#s_navbar li {
 
-		width: 10%;
-		padding-left: 20px;
+		width: 15%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -70,30 +62,21 @@
 		transition: all ease-in 0.5s;
 		z-index: 0;
 		transform: translateX(150%);
-
-	/*	height: 28px; width: calc(100% - 102px);
-		position: absolute;
-		right: 50px; top: 5px;
-		transition: all ease-in 0.5s;
-		z-index: 0;
-		transform: translateX(100%);*/
 	}
 
 	#s_searchbar a {
 
 		height: 100%; width: 50px;
 		position: absolute;
-		right: 50px;
+		right: 49px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: green;
 	}
 
 #s_myspace {
 
 	height: 100%; width: 50px;
-	background-color: blue;
 	z-index: 1;
 }
 
@@ -103,7 +86,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/*display: block;*/
 }
 
 #s_myspace > a:hover + #s_myspaceNav {
@@ -117,7 +99,6 @@
 		display: none;
 		position: fixed;
 		top: 50px; right: 0;
-		background-color: orange;
 	}
 
 	#s_myspaceNav:hover {
@@ -142,8 +123,7 @@
 				margin-top: 25px; margin-bottom: 20px;
 				display: flex;
 				align-items: center;
-				justify-content: center;
-				background-color: lightblue;
+				justify-content: center;				
 			}
 
 			#s_myspaceNav div a:nth-child(2) {
@@ -158,3 +138,13 @@
 			padding-top: 15px; padding-bottom: 15px;
 			padding-left: 10%; padding-right: 10%;
 		}
+
+
+#icon, #searchicon, #usericon, #s_navbar li a {
+
+	-webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 3s; /* Firefox < 16 */
+    -ms-animation: fadein 3s; /* Internet Explorer */
+     -o-animation: fadein 3s; /* Opera < 12.1 */
+        animation: fadein 3s;
+} 

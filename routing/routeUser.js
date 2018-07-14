@@ -194,7 +194,7 @@ router.post('/deleteDataUser', (req, res) => {
         id: req.body.id
     }
 
-    deleteQuery.deleteDataUser(object.id, (err, userFound) => {     
+    deleteQuery.deleteDataUser(object, (err, userFound) => {     
 
         if(err) throw err;
         if(!userFound){ return res.json({success: false, msg: "User not found !"}); }
@@ -210,7 +210,7 @@ router.post('/deleteUser', (req, res) => {
         id: req.body.id
     }
 
-    deleteQuery.deleteUser(object.id, (err, userFound) => {     
+    deleteQuery.deleteUser(object, (err, userFound) => {     
 
         if(err) throw err;
         if(!userFound){ return res.json({success: false, msg: "User not found !"}); }

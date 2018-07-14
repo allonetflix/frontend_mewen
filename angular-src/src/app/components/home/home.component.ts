@@ -120,7 +120,7 @@ export class HomeComponent implements OnInit {
 
 					this.table[test].counter--;
 
-					document.getElementById(this.table[test].list).style.transform = "translateX(" + ((this.table[test].counter - 1) * 170 * -1) + "px)";
+					document.getElementById(this.table[test].list).style.transform = "translateX(" + ((this.table[test].counter - 1) * 172 * -1) + "px)";
 				}	
 			}
 		}		
@@ -134,7 +134,7 @@ export class HomeComponent implements OnInit {
 
 				if(this.table[test].counter < this.listTest.length ) {
 
-					document.getElementById(this.table[test].list).style.transform = "translateX(" + (this.table[test].counter * 170 * -1) + "px)";
+					document.getElementById(this.table[test].list).style.transform = "translateX(" + (this.table[test].counter * 172 * -1) + "px)";
 					
 					this.table[test].counter++;
 				}	

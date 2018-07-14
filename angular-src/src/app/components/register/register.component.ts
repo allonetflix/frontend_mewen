@@ -25,7 +25,10 @@ export class RegisterComponent implements OnInit {
     sex: string; 
     birthDay: any;
     inscriptionDate: any;
-    rgpd: boolean
+    rgpd: boolean = true;
+    p_agreement:any;
+
+    compareDate: any = 17;
 
 	constructor(
 		private registerService: RegisterService,
@@ -70,6 +73,20 @@ export class RegisterComponent implements OnInit {
 			return false;
 		}
 
+		if( this.p_agreement == undefined || this.p_agreement == "" ){
+
+			this.flashMessages.show("Remplir tous les champs", {cssClass: 'flashfade alert-red', timeout: 3000 });
+			$(".flash-message").css("top", position );
+			return false;
+		}
+
+		if( this.p_agreement == "no" ){
+
+			this.flashMessages.show("L'accord parental ne vous permet pas de modifier vos données", {cssClass: 'flashfade alert-red', timeout: 3000 });
+			$(".flash-message").css("top", position );
+			return false;
+		}
+
 		// Inscription d'un nouvel utilisateur //
 
 	    this.registerService.registerUser(newUser).subscribe(data => {
@@ -90,5 +107,19 @@ export class RegisterComponent implements OnInit {
 			}
 
 	    });
+	}
+
+	checkDate() {
+
+		const today16 = new Date();
+
+		const birthday = new Date(this.birthDay);
+
+		this.compareDate = today16.getFullYear() - birthday.getFullYear();
+
+		console.log(this.compareDate);
+
+		if(this.compareDate < 16 && this.rgpd == true) { this.p_agreement = "no" }
+			else { this.p_agreement = "yes" }
 	}
 }

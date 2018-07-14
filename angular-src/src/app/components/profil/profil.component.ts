@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MomentModule } from 'angular2-moment/moment.module';
 
 import { ProfilService } from '../../services/profil.service';
+import { LoginService } from '../../services/login.service';
 
 import * as $ from "jquery";
 import * as moment from "moment";
@@ -38,6 +39,7 @@ export class ProfilComponent implements OnInit {
 
 	constructor(
 		private profilService: ProfilService,
+		private loginService: LoginService,
   		private flashMessages: FlashMessagesService,
     	private router: Router
     ) { }
@@ -51,7 +53,6 @@ export class ProfilComponent implements OnInit {
 	      	this.userData = data.userData;
 
   			this.rgpdUser = data.userData[0].rgpd;
-		console.log("this.rgpdUser : " + this.rgpdUser);
 	  	}, 
 	  	err => { return false; });
 	}
@@ -167,6 +168,8 @@ export class ProfilComponent implements OnInit {
 	    	let position = $(document).scrollTop() + 200;
 
 			if(data.success){
+
+				localStorage.clear();
 
 				this.flashMessages.show("Suppression du compte réussie", {cssClass: 'flashfade alert-blue', timeout: 3000 });
 				$(".flash-message").css("top", position );

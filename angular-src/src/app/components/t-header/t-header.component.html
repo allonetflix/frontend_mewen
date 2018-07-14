@@ -18,7 +18,7 @@
     <div id="t_searchbar">
 
         <input type="text" [(ngModel)]="research" name="searchbar" (keyup.enter)="onKey()">
-        <a (click)="onClickSearchBar()"><i class="fas fa-search"></i></a>
+        <a (click)="onClickSearchBar()" id="searchicon"><i class="fas fa-search"></i></a>
     </div>
 
     <a id="btn_myspace" (click)="onClickMyspace()"><i class="far fa-user-circle"></i></a>
@@ -31,7 +31,7 @@
 
         <div>
             
-            <a *ngIf="!profilService.loggedIn()" href="/login">IDENTIFIEZ-VOUS</a>
+            <a *ngIf="!profilService.loggedIn()" href="/login" id="identify">IDENTIFIEZ-VOUS</a>
             <a *ngIf="!profilService.loggedIn()" href="/register">Créez votre compte</a>
         </div>
 

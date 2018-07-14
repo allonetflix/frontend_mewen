@@ -5,7 +5,6 @@ h1 {
 	align-items: center;
 	padding-top: 25px;
 	padding-bottom: 15px;
-	background-color: blue;
 }
 
 .formnewcomment {
@@ -14,7 +13,6 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	margin-left: 15px; margin-right: 15px;
-	background-color: pink;
 }
 
 	.formnewcomment td {
@@ -74,6 +72,20 @@ h1 {
 	.submitbtn {
 
 		padding: 10px;
+	}
+
+	.submitbtn {
+
+		padding: 10px;
+		background-color: #3d3d3d;
+		color: white;
+		cursor: pointer;
+	}
+
+	.submitbtn:active {
+
+		background-color: #999;
+		color: #000;
 	}
 
 

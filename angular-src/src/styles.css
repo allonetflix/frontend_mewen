@@ -6,10 +6,18 @@
 	user-select: none;
 }
 
+h1 {
+	background-color: #000;
+	border-top: 1px solid #3d3d3d;
+	color: white;
+
+	position: relative;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+}
 html {
 
 	overflow-x:hidden;
-	background-color: grey;
+	background-color: #141414;
 }
 
 ul {
@@ -44,37 +52,137 @@ button {
 	border: none;
 }
 
-.submitbtn {
+header {
+	position: relative;
+	box-shadow: 0px 5px 15px black;
+}
 
+#header {
+	background-color: #000;
+	border-bottom: 2px solid #3d3d3d;
+}
+
+#s_header {
+	box-shadow: 0px 5px 15px black;
+}
+
+#container {
+	background: radial-gradient(darkgrey, black);
+}
+
+.subcontainer {
+	border-left: 2px solid #3d3d3d;
+	border-right: 2px solid #3d3d3d;
+	background: radial-gradient(#bfbfbf, white);
+}
+
+.submitbtn {
 	height: auto;
 	padding: 10px;
 	font-size: 20px;
 }
 
-#noResources {
+#namesite {
+	color: white;
+}
 
+#btnsearch {
+	background-color: #999;
+}
+
+#navbar, #s_navbar {
+	background-color: #141414;
+}
+
+#navbar li,
+#s_navbar li  {
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+#navbar li a,
+#s_navbar li a {
+	height: 100%; width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+#navbar li:hover,
+#s_navbar li:hover {
+	background-color: #DE0611;
+}
+
+#myspaceNav, #s_myspaceNav {
+	background-color: #3d3d3d;
+	box-shadow: 0px 5px 15px black;
+}
+
+#myspaceNav a,
+#s_myspaceNav a,
+#t_myspace a {
+	color: white;
+}
+
+#identify {
+	color:black !important;
+	background-color: #999;
+	margin-top: 50px;
+}
+
+#searchicon {
+	background-color: #3d3d3d;
+}
+
+#searchicon:hover {
+	background-color: #999;
+}
+
+#searchicon i {
+	color: #999;
+}
+
+#searchicon i:hover {
+	color: #3d3d3d;
+}
+
+#s_myspace {
+	background-color: #DE0611;
+}
+
+#usericon i {
+	color: white;
+}
+
+#noResources {
 	height: 500px; width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: pink;
+	background: radial-gradient(#bfbfbf, white);
 }
 
 #databtn {
-
 	text-align: center;
-	/*height: auto;*/
 	margin-top: 40px;
 	font-size: 15px;
 	padding: 10px;
 	cursor: pointer;
 	user-select: none;
 	border-radius: 3px;
-	background-color: red;
+	background-color: #999;
+	color: #000;
+}
+
+#databtn:active {
+
+	background-color: white;
+	border: 1px solid #3d3d3d;
+	color: #000;
 }
 
 #deletebtn {
-
 	text-align: center;
 	width: 150px;
 	margin-top: 10px;
@@ -83,11 +191,18 @@ button {
 	cursor: pointer;
 	user-select: none;
 	border-radius: 3px;
-	background-color: red;
+	background-color: #DE0611;
+	color: white;
+}
+
+#deletebtn:active {
+
+	background-color: white;
+	border: 1px solid #DE0611;
+	color: #DE0611;
 }
 
 .far {
-	color: black;
     height: 100%;
     width: 100%;
     font-size: 40px;
@@ -97,13 +212,16 @@ button {
 }
 
 .fas {
-	color: black;
     height: 100%;
     width: 100%;
     font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.titlelist a {
+	color: white;
 }
 
 /* Large devices (large desktops, 1200px and down) */
@@ -118,6 +236,7 @@ button {
 
 
 /* FadeIn */
+
 @keyframes fadein {
 from { opacity: 0; }
 to   { opacity: 1; }
@@ -145,11 +264,6 @@ to   { opacity: 1; }
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
-}
-
-#container {
-
-	background-color: black;
 }
 
 /* Flash-Message */

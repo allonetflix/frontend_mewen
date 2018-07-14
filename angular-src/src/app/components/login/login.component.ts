@@ -17,6 +17,11 @@ export class LoginComponent implements OnInit {
 	pseudo: string;
     password: string;
 
+    compareDate: any = 17;
+    birthDay: Date;
+	p_agreement:string = "true";
+	rgpdUser: boolean;
+
 	constructor(
 		private loginService: LoginService,
   		private flashMessages: FlashMessagesService,
@@ -65,6 +70,20 @@ export class LoginComponent implements OnInit {
 
 	  	});
 
+	}
+
+	checkDate() {
+
+		const today16 = new Date();
+
+		const birthday = new Date(this.birthDay);
+
+		this.compareDate = today16.getFullYear() - birthday.getFullYear();
+
+		console.log(this.compareDate);
+
+		if(this.compareDate < 16 && this.rgpdUser == true) { this.p_agreement = "no" }
+			else { this.p_agreement = "yes" }
 	}
 
 }

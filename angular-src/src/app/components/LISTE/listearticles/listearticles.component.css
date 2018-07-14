@@ -5,7 +5,6 @@ h1 {
 	align-items: center;
 	padding-top: 25px;
 	padding-bottom: 15px;
-	background-color: blue;
 }
 
 .list {
@@ -14,7 +13,7 @@ h1 {
 	padding: 10px;
 	display: flex;
 	border-bottom: 1px solid grey;
-	background-color: lightgreen;
+	background: radial-gradient(#bfbfbf, white);
 }
 
 .list:last-child{
@@ -42,7 +41,7 @@ h1 {
 			align-items: center;
 			padding-left: 15px;
 			font-size: 18px;
-			background-color: orange;
+			/*background-color: #3d3d3d;*/
 		}
 
 		.descriptionlist {
@@ -50,5 +49,10 @@ h1 {
 			height: 100px; width: calc(100% - 30px);
 			padding: 15px;
 			overflow-y: auto;
-			background-color: brown;
+			background-color: #999;
 		}
+
+.list:nth-child(even) .titlelist {
+
+	background-color: #DE0611;
+}

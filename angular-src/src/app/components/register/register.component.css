@@ -4,7 +4,6 @@ h1 {
 	padding-left: 15px;
 	padding-top: 15px;
 	text-align: center;
-	background-color: orange;
 }
 
 form {
@@ -90,7 +89,8 @@ table tr:nth-child(12) td:nth-child(4) input {
 }
 
 table tr:nth-child(14) td,
-table tr:nth-child(18) td {
+table tr:nth-child(18) td,
+#rgpdTr td {
 
 	display: flex;
 	align-items: center;
@@ -107,6 +107,20 @@ table tr:nth-child(14) td:last-child {
 table tr:last-child td {
 
 	padding-top: 10px;
+}
+
+.submitbtn {
+
+	padding: 10px;
+	background-color: #3d3d3d;
+	color: white;
+	cursor: pointer;
+}
+
+.submitbtn:active {
+
+	background-color: #999;
+	color: #000;
 }
 
 /* Small devices (tablets, 768px and down) */

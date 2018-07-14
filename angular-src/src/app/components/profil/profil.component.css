@@ -4,7 +4,6 @@ h1 {
 	padding-left: 15px;
 	padding-top: 15px;
 	text-align: center;
-	background-color: orange;
 }
 
 form {
@@ -119,6 +118,20 @@ table tr:last-child td {
 	align-items: center;
 	justify-content: center;
 	font-size: 15px;
+}
+
+.submitbtn {
+
+	padding: 10px;
+	background-color: #3d3d3d;
+	color: white;
+	cursor: pointer;
+}
+
+.submitbtn:active {
+
+	background-color: #999;
+	color: #000;
 }
 
 /* Small devices (tablets, 768px and down) */
