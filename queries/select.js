@@ -30,31 +30,31 @@ const db	        = require('../middlewares/connection');
         });
     }
 
-    // Search 
+// Search 
 
-    module.exports.searchRessourcesArticles = (object, callback) => { // searchRessourcesArticles
+module.exports.searchRessourcesArticles = (object, callback) => { // searchRessourcesArticles
 
-        const queryText = 'SELECT * FROM schema.article WHERE title LIKE $1;';
-        const queryValues = [object.search];
+    const queryText = 'SELECT * FROM schema.article WHERE title LIKE $1;';
+    const queryValues = [object.search];
 
-        db.connectionPsql(queryText, queryValues, callback);
-    }
+    db.connectionPsql(queryText, queryValues, callback);
+}
 
-    module.exports.searchRessourcesSeries = (object, callback) => { // searchRessourcesSeries
+module.exports.searchRessourcesSeries = (object, callback) => { // searchRessourcesSeries
 
-        const queryText = 'SELECT * FROM schema.serie WHERE title LIKE $1;';
-        const queryValues = [object.search];
+    const queryText = 'SELECT * FROM schema.serie WHERE title LIKE $1;';
+    const queryValues = [object.search];
 
-        db.connectionPsql(queryText, queryValues, callback);
-    }
+    db.connectionPsql(queryText, queryValues, callback);
+}
 
-    module.exports.searchRessourcesMovies = (object, callback) => { // searchRessourcesMovies
+module.exports.searchRessourcesMovies = (object, callback) => { // searchRessourcesMovies
 
-        const queryText = 'SELECT * FROM schema.movie WHERE title LIKE $1;';
-        const queryValues = [object.search];
+    const queryText = 'SELECT * FROM schema.movie WHERE title LIKE $1;';
+    const queryValues = [object.search];
 
-        db.connectionPsql(queryText, queryValues, callback);
-    }
+    db.connectionPsql(queryText, queryValues, callback);
+}
 
 
 // Article
@@ -245,6 +245,32 @@ module.exports.selectCommentsMovie = (idObject, callback) => { // selectComments
 
     const queryText = 'SELECT * FROM schema.comment WHERE fk_idmovie = $1;';
     const queryValues = [idObject._id];
+
+    db.connectionPsql(queryText, queryValues, callback);
+}
+
+// Like 
+
+module.exports.searchLikesArticles = (object, callback) => { // searchRessourcesArticles
+
+    const queryText = 'SELECT title, synopsis, img FROM schema.article, schema.article_like WHERE fk_iduserlike = $1 GROUP BY title, synopsis, img;';
+    const queryValues = [object.fk_iduserlike];
+
+    db.connectionPsql(queryText, queryValues, callback);
+}
+
+module.exports.searchLikesSeries = (object, callback) => { // searchRessourcesSeries
+
+    const queryText = 'SELECT title, synopsis, img FROM schema.serie, schema.serie_like WHERE fk_iduserlike = $1 GROUP BY title, synopsis, img;';
+    const queryValues = [object.fk_iduserlike];
+
+    db.connectionPsql(queryText, queryValues, callback);
+}
+
+module.exports.searchLikessMovies = (object, callback) => { // searchRessourcesMovies
+
+    const queryText = 'SELECT title, synopsis, img FROM schema.movie, schema.movie_like WHERE fk_iduserlike = $1 GROUP BY title, synopsis, img;';
+    const queryValues = [object.fk_iduserlike];
 
     db.connectionPsql(queryText, queryValues, callback);
 }

@@ -155,8 +155,6 @@ router.post('/searchRessources', (req, res) => { // Search Ressources
         search: req.body.search + "%",
     }
 
-    console.log("OBJECT IN BACK : " + object.search);
-
     selectQuery.searchRessourcesArticles(object, (err, articlesFound) => {     
 
         if(err) throw err;
@@ -217,6 +215,42 @@ router.post('/deleteUser', (req, res) => {
 
         res.json({ success: true });
     });
+});
+
+router.post('/likedRessources', (req, res) => { // Search Ressources
+
+    const object = {
+        fk_iduserlike: req.body.fk_iduserlike,
+    }
+
+    selectQuery.searchLikesArticles(object, (err, articlesFound) => {     
+
+        if(err) throw err;
+        
+        const articlesFoundObject = articlesFound;
+
+        selectQuery.searchLikesSeries(object, (err, seriesFound) => {   
+
+            if(err) throw err;
+
+            const seriesFoundObject = seriesFound;
+
+            selectQuery.searchLikessMovies(object, (err, moviesFound) => {     
+
+                if(err) throw err;
+
+                const moviesFoundObject = moviesFound;
+
+                res.json({
+                    success: true,
+                    articlesFound: articlesFoundObject,
+                    seriesFound: seriesFoundObject,
+                    moviesFound: moviesFoundObject,
+                });
+            });
+        });
+    });
+
 });
 
 module.exports = router;

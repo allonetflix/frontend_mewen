@@ -1,25 +1,31 @@
+/*.newcomment {
+
+	margin-top: 15px;
+}*/
+
 .subtitlesolo {
 
 	padding-top: 15px;
 	padding-bottom: 5px;
 	padding-left: 15px;
 	font-size: 18px;
-	background-color: orange;
+	color: white;
+	background-color: #DE0611;
 }
 
 .comments {
 
 	width: 100%;
 	margin-top: 25px;
-	background-color: lightblue;
+	background-color: #999;
 }
 
 .headercomment {
 
 	height: 40px; width: 100%;
-	margin-top: 25px;
 	display: flex;
-	background-color: orange;
+	color: white;
+	background-color: #3d3d3d;
 }
 
 	.titlecomment {
@@ -27,8 +33,7 @@
 		height: 40px; width: 75%;
 		display: flex;
 		align-items: center;
-		padding-left: 15px;
-		background-color: lightgreen;		
+		padding-left: 15px;	
 	}
 
 	.authorcomment {
@@ -36,7 +41,8 @@
 		height: 40px; width: 25%;
 		display: flex;
 		align-items: center;
-		background-color: brown;
+		padding-left: 25px;
+		background-color: rgba(0,0,0,0.5);
 	}
 
 .bodycomment {
@@ -50,7 +56,8 @@
 	display: flex;
 	flex-direction: column;
 	margin-left: 15px; margin-right: 15px;
-	background-color: pink;
+	border-radius: 5px;
+	background-color: #3d3d3d;
 }
 
 	.formnewcomment td {
@@ -103,8 +110,26 @@
 	.submitbtn {
 
 		padding: 10px;
+		background-color: #3d3d3d;
+		color: white;
+		cursor: pointer;
 	}
 
+	.submitbtn:active {
+
+		background-color: #999;
+		color: #000;
+	}
+
+.comments li:nth-child(even) .headercomment {
+
+	background-color: #DE0611;
+}
+
+.comments li {
+
+	padding-bottom: 15px;
+}
 
 /* Small devices (tablets, 768px and down) */
 @media (max-width: 992px) {

@@ -58,6 +58,19 @@ module.exports.insertNoteArticle = (object, callback) => { // insertNoteArticle
 
 // Serie
 
+module.exports.insertSerie = (object, callback) => { // selectSerieLike
+
+    const date  = new Date();
+    const day   = (date.getDate() < 10 ? "0" + date.getDate() : date.getDate());
+    const month = ((date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1));
+    object.creationDate = day + '/' + month + '/' + date.getFullYear();
+
+    const queryText = 'INSERT INTO schema.serie (title, synopsis, tag, creator, background, img, note, creationDate) VALUES ($1, $2, $3, $4, $5, $6, $7, $8);';
+    const queryValues = [object.title, object.synopsis, object.tag, object.creator, object.background, object.img, object.note, object.creationDate];
+
+    db.connectionPsql(queryText, queryValues, callback);
+}
+
 module.exports.insertSerieLike = (object, callback) => { // selectSerieLike
 
     const queryText = 'INSERT INTO schema.serie_like (fk_idserie, fk_iduserlike) VALUES ($1, $2);';

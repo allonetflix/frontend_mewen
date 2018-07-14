@@ -5,6 +5,7 @@ h1 {
 	align-items: center;
 	padding-top: 25px;
 	padding-bottom: 15px;
+	border-top: none;
 }
 
 .list {

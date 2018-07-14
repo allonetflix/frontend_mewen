@@ -38,6 +38,7 @@
         <ul>
 
             <li *ngIf="profilService.loggedIn()"><a href="/profil">Profil</a></li>
+            <li *ngIf="profilService.loggedIn()"><a href="/liked">Liste des favoris</a></li>
             <li *ngIf="profilService.loggedIn()"><a href="/addarticle">Ajouter un article</a></li>
             <li *ngIf="profilService.loggedIn()"><a href="/login" (click)=" logoutUser();">Déconnexion</a></li>
         </ul>

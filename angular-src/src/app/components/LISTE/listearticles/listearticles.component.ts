@@ -49,8 +49,6 @@ export class ListearticlesComponent implements OnInit {
 				this.listArticles = data.listArticlesByDate;
 		  	}, err => { return false; });
 	    }	
-
-	    console.log("LISTE ARTICLE : " + this.listArticles);
 	}
 
 	ngOnInit() {

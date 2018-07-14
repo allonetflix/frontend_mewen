@@ -101,9 +101,9 @@
 
 			<ul class="listAsidePanelHome">
 
-				<li *ngFor="let article of listArticlesBySoon; let i = index">
+				<li *ngFor="let article of listArticles; let i = index">
 					
-					<div class="asidePanelHome"><a href="#">{{ article.title }}</a></div>
+					<div class="asidePanelHome"><a href="/article?id={{ article.idarticle }}">{{ article.title }}</a></div>
 				</li>
 			</ul>
 		</aside>
@@ -250,7 +250,7 @@
 
 			<ul class="listAsidePanelHome">
 
-				<li *ngFor="let movie of listMoviesBySoon; let i = index">
+				<li *ngFor="let movie of listMovies; let i = index">
 					
 					<div class="asidePanelHome"><a href="#">{{ movie.title }}</a></div>
 				</li>

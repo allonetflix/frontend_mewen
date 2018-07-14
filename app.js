@@ -9,6 +9,8 @@ const db            = require('./middlewares/connection');
 
 const app           = express();
 
+// const crawler       = require('./middlewares/crawler');
+
 
 // STATIC FOLDER //
 

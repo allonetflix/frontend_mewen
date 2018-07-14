@@ -47,6 +47,8 @@ export class ArticleComponent implements OnInit {
 
 		this.profilService.dataUser().subscribe( data => {
 
+			console.log("DATA USER : ", data[0])
+
   			this.idUser = data.userData[0].iduser;
 	      	this.userData = data.userData;
 

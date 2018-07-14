@@ -16,7 +16,9 @@
     "body-parser": "*",
     "passport": "*",
     "passport-jwt": "*",
-    "pg": "*"
+    "pg": "*",
+    "cheerio": "*",
+    "request": "*"
   },
   "author": "Mewen",
   "license": "ISC"

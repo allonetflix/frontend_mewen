@@ -1,6 +1,10 @@
 <div id="moviesolo" *ngIf="movie">
 
-	<div id="movieimg"><img src="{{ movie.img }}" height="180px" width="150px"/></div>
+	<div id="movieimg">
+		<div>
+			<img src="{{ movie.img }}" height="180px" width="150px"/>
+		</div>
+	</div>
 
 	<div id="moviebody">
 		
@@ -13,12 +17,12 @@
 		<table class="tablesolo">
 			
 			<tr>
-				<td>nationalité : </td>
+				<td>Nationalité : </td>
 				<td>{{ movie.nationality }}</td>
 			</tr>
 
 			<tr>
-				<td>realisator : </td>
+				<td>Réalisateur : </td>
 				<td>{{ movie.realisator }}</td>
 			</tr>
 		</table>

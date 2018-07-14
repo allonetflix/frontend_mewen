@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { SearchComponent } from './components/search/search.component';
+import { LikeComponent } from './components/like/like.component';
 
 import { SeriesComponent } from './components/SOLO/series/series.component';
 import { SaisonComponent } from './components/SOLO/saison/saison.component';
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
 	{ path: 'register', component: RegisterComponent, canActivate: [DeconnectionGuard] },
 	{ path: 'profil', component: ProfilComponent, canActivate: [ConnectionGuard] },
 	{ path: 'search', component: SearchComponent },
+	{ path: 'liked', component: LikeComponent },
 
 	{ path: 'series', component: SeriesComponent },
 	{ path: 'saison', component: SaisonComponent },
@@ -75,7 +77,8 @@ export const routedComponents = [
     LoginComponent,
     RegisterComponent,
     ProfilComponent,
-    SearchComponent
+    SearchComponent,
+    LikeComponent
 ];
 
 export const guardServices = [

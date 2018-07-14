@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { AppComponent } from '../../app.component';
 import { HomeService } from '../../services/home.service';
+import { ListearticlesService } from '../../services/LISTE/listearticles.service';
+import { ListemoviesService } from '../../services/LISTE/listemovies.service';
 
 import * as $ from "jquery";
 
@@ -16,17 +18,21 @@ export class HomeComponent implements OnInit {
 
 	listTest:number[];
 	table:any;
+	listArticles:object[];
 	listArticlesByDate:object[];
 	listArticlesByNote:object[];
 	listArticlesBySoon:object[];
 	listSeriesByDate:object[];
 	listSeriesByNote:object[];
+	listMovies:object[];
 	listMoviesByDate:object[];
 	listMoviesByNote:object[];
 	listMoviesBySoon:object[];
 
 	constructor(
 		private homeService: HomeService,
+		private listearticlesService: ListearticlesService,
+		private listemoviesService: ListemoviesService,
 		private appComponent: AppComponent,
   		private router: Router
   	) {
@@ -46,6 +52,11 @@ export class HomeComponent implements OnInit {
 
 			this.listArticlesBySoon = data.listArticlesBySoon;
 	  	}, err => {	return false; });
+
+		this.listearticlesService.getArticles().subscribe( data => {
+
+			this.listArticles = data.listArticles;
+	  	}, err => { return false; });
 
 	  	// listSeries
 		this.homeService.getSeriesByDate().subscribe( data => {
@@ -73,6 +84,11 @@ export class HomeComponent implements OnInit {
 
 			this.listMoviesBySoon = data.listMoviesBySoon;
 	  	}, err => {	return false; });
+
+	  	this.listemoviesService.getMovies().subscribe( data => {
+
+			this.listMovies = data.listMovies;
+	  	}, err => { return false; });
   	}
 
 	ngOnInit() {

@@ -55,6 +55,7 @@ button {
 header {
 	position: relative;
 	box-shadow: 0px 5px 15px black;
+	z-index: 5;
 }
 
 #header {
@@ -222,6 +223,11 @@ header {
 
 .titlelist a {
 	color: white;
+}
+
+.paragraphsolo {
+	background-color: #999;
+	padding-bottom: 25px;
 }
 
 /* Large devices (large desktops, 1200px and down) */
